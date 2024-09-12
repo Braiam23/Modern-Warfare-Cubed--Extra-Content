@@ -124,8 +124,7 @@ public class turretgunupgradedFactory implements GunFactory {
                 .setupModernAnimations("scar", AuxiliaryAttachments.ScarAction)
                 .setupModernMagazineAnimations("scar", 
                 		Magazines.M4A1Mag, 
-                		Magazines.M38Mag, 
-                		Magazines.Stanag100,
+                		Magazines.M38Mag,
                 		Magazines.Stanag50,
                 		Magazines.Stanag60,
                 		Magazines.SOCOM_Mag)

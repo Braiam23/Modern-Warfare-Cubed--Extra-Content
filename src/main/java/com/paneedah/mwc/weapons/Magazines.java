@@ -23,7 +23,6 @@ public class Magazines {
     public static ItemMagazine C8Mag;
     public static ItemMagazine Stanag50;
     public static ItemMagazine Stanag60;
-    public static ItemMagazine Stanag100;
     public static ItemMagazine AK101Mag;
     public static ItemMagazine AK74Mag;
     public static ItemMagazine AK74Mag60;
@@ -37,7 +36,6 @@ public class Magazines {
     public static ItemMagazine DragunovMag;
     public static ItemMagazine AK50Mag;
     public static ItemMagazine AK75Mag;
-    public static ItemMagazine AK100Mag;
     public static ItemMagazine M9A1Mag;
     public static ItemMagazine FiveSevenMag;
     public static ItemMagazine SamuraiEdgeMag;
@@ -123,10 +121,8 @@ public class Magazines {
     public static ItemMagazine DesertEagleMag;
     public static ItemMagazine M60Mag;
     public static ItemMagazine M249Mag;
-    public static ItemMagazine StonerMag;
     public static ItemMagazine M134Mag;
     public static ItemMagazine FuelCell;
-    public static ItemMagazine NinthSinMag;
 
     public static void init(Object mod) {
     	
@@ -156,36 +152,7 @@ public class Magazines {
 //                          MwItems.steelIngot,
 //                          MwItems.gunmetalIngot)
                 .withTextureName("Dummy.png").build(MWC.modContext, ItemMagazine.class);
-/*
-        Magazines.NinthSinMag = new ItemMagazine.Builder()
-        		.withCapacity(100)
-                .withName("NinthSinMag")
 
-                .withCreativeTab(MWC.AmmoTab)
-                .withModel(new com.paneedah.mwc.models.NinthSinMagazine(), "ninthsin.png")
-
-                .withFirstPersonPositioning(() -> {
-                    GL11.glTranslatef(0.1F, -0.3F, 0.4F);
-                    GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.7F, 0.7F, 0.7F);
-                }).withThirdPersonPositioning(() -> {
-                    GL11.glTranslatef(-0.3F, 0.5F, 0.1F);
-                    GL11.glRotatef(-50F, 0f, 1f, 0f);
-                    GL11.glRotatef(10F, 1f, 0f, 0f);
-                    GL11.glScaled(0.7F, 0.7F, 0.7F);
-                }).withInventoryPositioning(() -> {
-                    GL11.glTranslatef(0.3F, 0.5F, -0F);
-                    GL11.glRotatef(-150F, 0f, 1f, 0f);
-                    GL11.glRotatef(-6F, 1f, 0f, 0f);
-                    GL11.glRotatef(-15F, 0f, 0f, 1f);
-                    GL11.glScaled(1F, 1F, 1f);
-                })
-                .withMaxStackSize(6)
-//                .withCrafting(CraftingComplexity.MEDIUM,
-//                          MwItems.steelIngot,
-//                          MwItems.gunmetalIngot)
-                .withTextureName("Dummy.png").build(MWC.modContext, ItemMagazine.class);
-*/
         Magazines.BrenMag = new ItemMagazine.Builder()
         		.withCapacity(30)
         		.withCompatibleBullet(Bullets.Bullet762x51)
@@ -553,32 +520,6 @@ public class Magazines {
                           MWCItems.steelIngot,
                           MWCItems.gunmetalIngot)
                 .withTextureName("Dummy.png").build(MWC.modContext, ItemMagazine.class);
-
-        Magazines.StonerMag = new ItemMagazine.Builder().withCapacity(100).withCompatibleBullet(Bullets.Bullet556x45).withName("StonerMag")
-                .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
-                .withModel(new com.paneedah.mwc.models.StonerA1MAG(), "m249.png")
-
-                .withFirstPersonPositioning(() -> {
-                    GL11.glTranslatef(0.1F, -0.3F, 0.4F);
-                    GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.7F, 0.7F, 0.7F);
-                }).withThirdPersonPositioning(() -> {
-                    GL11.glTranslatef(-0.3F, 0.5F, 0.1F);
-                    GL11.glRotatef(-50F, 0f, 1f, 0f);
-                    GL11.glRotatef(10F, 1f, 0f, 0f);
-                    GL11.glScaled(0.7F, 0.7F, 0.7F);
-                }).withInventoryPositioning(() -> {
-                    GL11.glTranslatef(0.3F, -2.2F, 3.7F);
-                    GL11.glRotatef(-150F, 0f, 1f, 0f);
-                    GL11.glRotatef(-6F, 1f, 0f, 0f);
-                    GL11.glRotatef(-15F, 0f, 0f, 1f);
-                    GL11.glScaled(0.8F, 0.8F, 0.8f);
-                })
-                .withMaxStackSize(6)
-                .withCrafting(CraftingComplexity.MEDIUM,
-                          MWCItems.steelIngot,
-                          MWCItems.gunmetalIngot)
-                .withTextureName("Dummy.png").build(MWC.modContext, ItemMagazine.class);
         
         Magazines.HoneyBadgerMag = new ItemMagazine.Builder()
         		.withCapacity(30)
@@ -782,37 +723,7 @@ public class Magazines {
                 })
                 .withMaxStackSize(6)
                 .withTextureName("Dummy.png").build(MWC.modContext, ItemMagazine.class);
-        
-        Magazines.Stanag100 = new ItemMagazine.Builder()
-        		.withCapacity(100)
-        		.withCompatibleBullet(Bullets.Bullet556x45)
-        		.withName("Stanag100")
-        		.withRotationPoint(-0.16000000476837162, -0.16000000476837162, -1.5200000452995304)
-                .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
-                .withModel(new com.paneedah.mwc.models.NATODrum100(), "drum100rndmag.png")
-                .withRequiredAttachments(Attachments.Placeholder, Attachments.M4Receiver, Attachments.VLTORReceiver, 
-                        Attachments.AUGDefaultKit, Attachments.Vector556Handguard,
-                        Attachments.M16A1RearSights, Attachments.CZ805BrenReceiver, Attachments.HK416Receiver,
-                        Attachments.ScarLReceiver, Attachments.SIG556Grip)
-                .withFirstPersonPositioning(() -> {
-                    GL11.glTranslatef(0.1F, -0.3F, 0.4F);
-                    GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.7F, 0.7F, 0.7F);
-                }).withThirdPersonPositioning(() -> {
-                    GL11.glTranslatef(-0.3F, 0.5F, 0.1F);
-                    GL11.glRotatef(-50F, 0f, 1f, 0f);
-                    GL11.glRotatef(10F, 1f, 0f, 0f);
-                    GL11.glScaled(0.7F, 0.7F, 0.7F);
-                }).withInventoryPositioning(() -> {
-                    GL11.glTranslatef(0.3F, 1.2F, -0.6F);
-                    GL11.glRotatef(-160F, 0f, 1f, 0f);
-                    GL11.glRotatef(-6F, 1f, 0f, 0f);
-                    GL11.glRotatef(-15F, 0f, 0f, 1f);
-                    GL11.glScaled(1.2F, 1.2F, 1.2f);
-                })
-                .withMaxStackSize(6)
-                .withTextureName("Dummy.png").build(MWC.modContext, ItemMagazine.class);
-        
+
         Magazines.G36CMag = new ItemMagazine.Builder()
         		.withCapacity(30)
         		.withCompatibleBullet(Bullets.Bullet556x45)
@@ -1170,34 +1081,6 @@ public class Magazines {
                     GL11.glRotatef(0F, 1f, 0f, 0f);
                     GL11.glRotatef(-5F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                })
-                .withMaxStackSize(6)
-                .withTextureName("Dummy.png").build(MWC.modContext, ItemMagazine.class);
-        
-        Magazines.AK100Mag = new ItemMagazine.Builder()
-        		.withCapacity(100)
-        		.withCompatibleBullet(Bullets.Bullet762x39)
-        		.withName("AK100Mag")
-        		.withRotationPoint(-0.12000000357627871, 0.28000000834465033, -1.8800000560283665)
-
-                .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
-                .withModel(new com.paneedah.mwc.models.AKDrum100(), "gun.png")
-
-                .withFirstPersonPositioning(() -> {
-                    GL11.glTranslatef(0.1F, -0.3F, 0.4F);
-                    GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.7F, 0.7F, 0.7F);
-                }).withThirdPersonPositioning(() -> {
-                    GL11.glTranslatef(-0.3F, 0.5F, 0.1F);
-                    GL11.glRotatef(-50F, 0f, 1f, 0f);
-                    GL11.glRotatef(10F, 1f, 0f, 0f);
-                    GL11.glScaled(0.7F, 0.7F, 0.7F);
-                }).withInventoryPositioning(() -> {
-                    GL11.glTranslatef(0.3F, 0.6f, -2.4F);
-                    GL11.glRotatef(-150F, 0f, 1f, 0f);
-                    GL11.glRotatef(0F, 1f, 0f, 0f);
-                    GL11.glRotatef(-5F, 0f, 0f, 1f);
-                    GL11.glScaled(0.8F, 0.8F, 0.8f);
                 })
                 .withMaxStackSize(6)
                 .withTextureName("Dummy.png").build(MWC.modContext, ItemMagazine.class);

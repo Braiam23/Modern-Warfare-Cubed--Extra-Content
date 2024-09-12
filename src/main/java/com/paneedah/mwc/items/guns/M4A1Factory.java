@@ -408,10 +408,6 @@ public class M4A1Factory implements GunFactory {
             GL11.glTranslatef(0F, 0.25F, -0F);
 //            GL11.glScaled(1.15F, 1.2F, 1.2F);
         })
-        .withCompatibleAttachment(Magazines.Stanag100, (model) -> {
-            GL11.glTranslatef(-0.35F, 0.69F, -1.25F);
-            GL11.glScaled(1.15F, 1.2F, 1.15F);
-        })
 //        .withCompatibleAttachment(Magazines.P90Mag, (model) -> {
 //            GL11.glTranslatef(-0.046F, -0.47F, -2.35F);
 //            GL11.glScaled(0.6F, 0.7F, 0.55F);
@@ -447,10 +443,6 @@ public class M4A1Factory implements GunFactory {
             GL11.glRotatef(-10F, 1f, 0f, 0f);
             GL11.glTranslatef(0F, 0.25F, -0F);
 //            GL11.glScaled(1.15F, 1.2F, 1.2F);
-        })
-        .withCompatibleAttachment(Magazines.Stanag100, (model) -> {
-            GL11.glTranslatef(-0.35F, 0.69F, -1.25F);
-            GL11.glScaled(1.15F, 1.2F, 1.15F);
         })
 	   .withCompatibleAttachment(AuxiliaryAttachments.AR15Iron, true, (model) -> {
             if(model instanceof M4Iron1) {
@@ -970,8 +962,7 @@ public class M4A1Factory implements GunFactory {
                 .setupModernAnimations("m4a1", AuxiliaryAttachments.AKaction)
                 .setupModernMagazineAnimations("m4a1", 
                 		Magazines.M4A1Mag, 
-                		Magazines.M38Mag, 
-                		Magazines.Stanag100,
+                		Magazines.M38Mag,
                 		Magazines.Stanag50,
                 		Magazines.Stanag60,
                 		Magazines.SOCOM_Mag)

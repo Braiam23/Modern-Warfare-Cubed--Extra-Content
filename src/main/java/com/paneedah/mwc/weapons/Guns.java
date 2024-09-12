@@ -25,8 +25,6 @@ public class Guns {
     public static Item P226;
     public static Item FiveSeven;
     public static Item M9A1;
-    public static Item MAS21;
-    
     public static Item turretgun;
     public static Item turretgunupgraded;
     public static Item turretgunsilenced;
@@ -117,7 +115,6 @@ public class Guns {
     public static Item MG34;
     public static Item MG42;
     public static Item M60E4;
-    public static Item StonerA1;
     public static Item SSG08;
     public static Item DSR1;
     public static Item L96A1;
@@ -131,7 +128,6 @@ public class Guns {
     public static Item RPG7;
     public static Item M202;
     public static Item M134;
-//    public static Item NinthSin;
     
     
     // TDM
@@ -285,7 +281,6 @@ public class Guns {
         M1941Johnson = new M1941JohnsonFactory().createGun(proxy);
 
         M249 = new M249Factory().createGun(proxy);
-        StonerA1 = new StonerA1Factory().createGun(proxy);
         M134 = new M134Factory().createGun(proxy);
 
         //REVOLVER
@@ -312,7 +307,6 @@ public class Guns {
         HK_P12 = new HK_P12Factory().createGun(proxy);
 
         //SIDEARM1
-        MAS21 = new MAS21Factory().createGun(proxy);
         G2Contender = new G2ContenderFactory().createGun(proxy);
         M712 = new M712Factory().createGun(proxy);
         M1911 = new M1911Factory().createGun(proxy);

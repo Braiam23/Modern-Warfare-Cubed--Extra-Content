@@ -258,12 +258,6 @@ public class ACRFactory implements GunFactory {
 //            GL11.glScaled(1.15F, 1.2F, 1.2F);
         })
 
-        // Compatible ACR attachment Stanag100
-        .withCompatibleAttachment(Magazines.Stanag100, (model) -> {
-            GL11.glTranslatef(-0.35F, 0.5F, -1.31F);
-            GL11.glScaled(1.2F, 1.2F, 1.2F);
-        })
-
         // Compatible ACR attachment NightRaider
         .withCompatibleAttachment(Attachments.NightRaider, (player, stack) -> {
             GL11.glTranslatef(-0.22F, -1.6F, -2F);
@@ -691,8 +685,7 @@ public class ACRFactory implements GunFactory {
                 .setupModernAnimations("acr", AuxiliaryAttachments.AKaction)
                 .setupModernMagazineAnimations("acr", 
                 		Magazines.M4A1Mag, 
-                		Magazines.M38Mag, 
-                		Magazines.Stanag100,
+                		Magazines.M38Mag,
                 		Magazines.Stanag50,
                 		Magazines.Stanag60,
                 		Magazines.SOCOM_Mag)

@@ -209,10 +209,6 @@ public class SIGMCXFactory implements GunFactory {
              GL11.glScaled(1.02F, 1.33F, 1.33F);
 //            GL11.glScaled(1.15F, 1.2F, 1.2F);
         })
-        .withCompatibleAttachment(Magazines.Stanag100, (model) -> {
-            GL11.glTranslatef(-0.35F, 0.69F, -1.37F);
-            GL11.glScaled(1.15F, 1.3F, 1.3F);
-        })
 		.withCompatibleAttachment(AuxiliaryAttachments.AR15Action, true, (model) -> {
             GL11.glTranslatef(-0.175F, -1.535F, -0.7F);
             GL11.glScaled(0.7F, 0.4F, 0.7F);
@@ -606,8 +602,7 @@ public class SIGMCXFactory implements GunFactory {
                 .setupModernAnimations("MCx", AuxiliaryAttachments.ScarAction)
                 .setupModernMagazineAnimations("MCx",
                 		Magazines.M4A1Mag, 
-                		Magazines.M38Mag, 
-                		Magazines.Stanag100,
+                		Magazines.M38Mag,
                 		Magazines.Stanag50,
                 		Magazines.Stanag60,
                 		Magazines.SOCOM_Mag)

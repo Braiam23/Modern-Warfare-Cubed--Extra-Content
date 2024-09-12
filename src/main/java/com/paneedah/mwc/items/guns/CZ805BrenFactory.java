@@ -123,10 +123,6 @@ public class CZ805BrenFactory implements GunFactory {
         	GL11.glRotatef(-10F, 1f, 0f, 0f);
             GL11.glTranslatef(0F, 0.25F, -0F);
         })
-        .withCompatibleAttachment(Magazines.Stanag100, (model) -> {
-        	 GL11.glTranslatef(-0.35F, 0.69F, -1.25F);
-             GL11.glScaled(1.15F, 1.2F, 1.15F);
-        })
         .withCompatibleAttachment(AuxiliaryAttachments.BrenAction, true, (model) -> {
 //            GL11.glTranslatef(0F, 0F, 0.75F);
         })
@@ -397,8 +393,7 @@ public class CZ805BrenFactory implements GunFactory {
                 .setupModernAnimations("cz805bren", AuxiliaryAttachments.BrenAction)
                 .setupModernMagazineAnimations("cz805bren", 
                 		Magazines.M4A1Mag, 
-                		Magazines.M38Mag, 
-                		Magazines.Stanag100,
+                		Magazines.M38Mag,
                 		Magazines.Stanag50,
                 		Magazines.Stanag60,
                 		Magazines.SOCOM_Mag)

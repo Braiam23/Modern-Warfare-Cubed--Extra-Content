@@ -161,8 +161,6 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> M1GarandMag;
     public static ItemAttachment<Weapon> G11Action;
     public static ItemAttachment<Weapon> AUGAction;
-    public static ItemAttachment<Weapon> StonerHATCH;
-    public static ItemAttachment<Weapon> StonerBELT;
     public static ItemAttachment<Weapon> JohnsonACTION;
     public static ItemAttachment<Weapon> NTW20Barrel;
     public static ItemAttachment<Weapon> NTW20Action;
@@ -187,9 +185,6 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> ScorpionAction;
     public static ItemAttachment<Weapon> APC9Action;
     public static ItemAttachment<Weapon> ARX160Action;
-    public static ItemAttachment<Weapon> MAS21Slide;
-    public static ItemAttachment<Weapon> MAS21Part;
-    public static ItemAttachment<Weapon> MAS21Barrel;
     public static ItemAttachment<Weapon> PanelUpper;
     public static ItemAttachment<Weapon> PanelLower;
     public static ItemAttachment<Weapon> RegulatorUpper;
@@ -226,103 +221,6 @@ public class AuxiliaryAttachments {
     
     public static void init(Object mod) {
         
-/*
-    	PanelUpper = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA)
-                // .withCreativeTab(MWC.gunsTab)
-                .withModel(new com.paneedah.mwc.models.NinthSinPanelUpper(), "ninthsin.png")
-                .withName("PanelUpper")
-                .withRenderablePart().withTextureName("Dummy.png")
-                .build(MWC.modContext);
-    	
-    	PanelLower = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA2)
-                // .withCreativeTab(MWC.gunsTab)
-                .withModel(new com.paneedah.mwc.models.NinthSinPanelLower(), "ninthsin.png")
-                .withName("PanelLower")
-                .withRenderablePart().withTextureName("Dummy.png")
-                .build(MWC.modContext);
-    	
-    	RegulatorUpper = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA3)
-                // .withCreativeTab(MWC.gunsTab)
-                .withModel(new com.paneedah.mwc.models.NinthSinRegulatorUpper(), "ninthsin.png")
-                .withName("RegulatorUpper")
-                .withRenderablePart().withTextureName("Dummy.png")
-                .build(MWC.modContext);
-    	
-    	RegulatorLower = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA4)
-                // .withCreativeTab(MWC.gunsTab)
-                .withModel(new com.paneedah.mwc.models.NinthSinRegulatorLower(), "ninthsin.png")
-                .withName("RegulatorLower")
-                .withRenderablePart().withTextureName("Dummy.png")
-                .build(MWC.modContext);
-    	
-    	RegulatorRotator = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA5)
-                // .withCreativeTab(MWC.gunsTab)
-                .withModel(new com.paneedah.mwc.models.NinthSinRegulatorRotator(), "ninthsin.png")
-                .withName("RegulatorRotator")
-                .withRenderablePart().withTextureName("Dummy.png")
-                .build(MWC.modContext);
-    	
-    	RegulatorActionUpper = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA6)
-                // .withCreativeTab(MWC.gunsTab)
-                .withModel(new com.paneedah.mwc.models.NinthSinRegulatorActionUpper(), "ninthsin.png")
-                .withName("RegulatorActionUpper")
-                .withRenderablePart().withTextureName("Dummy.png")
-                .build(MWC.modContext);
-    	
-    	RegulatorActionLower = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA7)
-                // .withCreativeTab(MWC.gunsTab)
-                .withModel(new com.paneedah.mwc.models.NinthSinRegulatorActionLower(), "ninthsin.png")
-                .withName("RegulatorActionLower")
-                .withRenderablePart().withTextureName("Dummy.png")
-                .build(MWC.modContext);
-    	
-    	RegulatorAction = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA8)
-                // .withCreativeTab(MWC.gunsTab)
-                .withModel(new com.paneedah.mwc.models.NinthSinRegulatorAction(), "ninthsin.png")
-                .withName("RegulatorAction")
-                .withRenderablePart().withTextureName("Dummy.png")
-                .build(MWC.modContext);
-    	
-    	CyclerFront = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA9)
-                // .withCreativeTab(MWC.gunsTab)
-                .withModel(new com.paneedah.mwc.models.NinthSinCycleFront(), "ninthsin.png")
-                .withName("CyclerFront")
-                .withRenderablePart().withTextureName("Dummy.png")
-                .build(MWC.modContext);
-    	
-    	CyclerBackLeft = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA10)
-                // .withCreativeTab(MWC.gunsTab)
-                .withModel(new com.paneedah.mwc.models.NinthSinCycleBackLeft(), "ninthsin.png")
-                .withName("CyclerBackLeft")
-                .withRenderablePart().withTextureName("Dummy.png")
-                .build(MWC.modContext);
-    	
-    	CyclerBackRight = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA11)
-                // .withCreativeTab(MWC.gunsTab)
-                .withModel(new com.paneedah.mwc.models.NinthSinCycleBackRight(), "ninthsin.png")
-                .withName("CyclerBackRight")
-                .withRenderablePart().withTextureName("Dummy.png")
-                .build(MWC.modContext);
-    	
-    	Cycler = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA12)
-                // .withCreativeTab(MWC.gunsTab)
-                .withModel(new com.paneedah.mwc.models.NinthSinCycle(), "ninthsin.png")
-                .withName("Cycler")
-                .withRenderablePart().withTextureName("Dummy.png")
-                .build(MWC.modContext);
-*/
         ChainB = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA3)
                 // .withCreativeTab(MWC.gunsTab)
@@ -404,38 +302,6 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mwc.models.AUGaction(), "aug.png")
                 .withName("AUGAction")
                 .withRenderablePart().withTextureName("Dummy.png")
-                .build(MWC.modContext);
-        
-        MAS21Slide = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA)
-                // .withCreativeTab(MWC.gunsTab)
-                .withModel(new com.paneedah.mwc.models.MAS21Slide(), "MAS21.png")
-                .withModel(new com.paneedah.mwc.models.P226rearsight(), "p226rearsight.png")
-                .withModel(new com.paneedah.mwc.models.P226frontsight(), "p226frontsight.png")
-                .withName("MAS21Slide")
-                .withRenderablePart()
-        
-                .withTextureName("Dummy.png")
-                .build(MWC.modContext);
-        
-        MAS21Barrel = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA2)
-                // .withCreativeTab(MWC.gunsTab)
-                .withModel(new com.paneedah.mwc.models.MAS21Barrel(), "MAS21.png")
-                .withName("MAS21Barrel")
-                .withRenderablePart()
-        
-                .withTextureName("Dummy.png")
-                .build(MWC.modContext);
-        
-        MAS21Part = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA3)
-                // .withCreativeTab(MWC.gunsTab)
-                .withModel(new com.paneedah.mwc.models.MAS21Part(), "MAS21.png")
-                .withName("MAS21Part")
-                .withRenderablePart()
-        
-                .withTextureName("Dummy.png")
                 .build(MWC.modContext);
         
         M32Main1B = new AttachmentBuilder<Weapon>()
@@ -873,26 +739,7 @@ public class AuxiliaryAttachments {
                 .withRenderablePart()
         
                 .withTextureName("Dummy.png").build(MWC.modContext);
-        
-        StonerHATCH = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA3)
-                // .withCreativeTab(MWC.gunsTab)
-                .withModel(new com.paneedah.mwc.models.StonerA1HATCH(), "gun.png")
-                .withModel(new M27rearsight(), "gun.png")
-                .withName("StonerHATCH")
-                .withRenderablePart()
-        
-                .withTextureName("Dummy.png").build(MWC.modContext);
-        
-        StonerBELT = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA2)
-                // .withCreativeTab(MWC.gunsTab)
-                .withModel(new com.paneedah.mwc.models.StonerA1BELT(), "gun.png")
-                .withName("StonerBELT")
-                .withRenderablePart()
-        
-                .withTextureName("Dummy.png").build(MWC.modContext);
-        
+				
         JohnsonACTION = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA2)
                 // .withCreativeTab(MWC.gunsTab)

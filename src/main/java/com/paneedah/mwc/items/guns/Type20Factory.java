@@ -128,10 +128,6 @@ public class Type20Factory implements GunFactory {
             GL11.glTranslatef(0F, 0.2F, -0.15F);
 //            GL11.glScaled(1.15F, 1.2F, 1.2F);
         })
-        .withCompatibleAttachment(Magazines.Stanag100, (model) -> {
-            GL11.glTranslatef(-0.36F, 0.5F, -1.31F);
-            GL11.glScaled(1.2F, 1.2F, 1.2F);
-        })
         .withCompatibleAttachment(Attachments.NightRaider, (player, stack) -> {
             GL11.glTranslatef(-0.22F, -1.52F, -2F);
             GL11.glScaled(0.82F, 0.82F, 0.82F);
@@ -388,8 +384,7 @@ public class Type20Factory implements GunFactory {
                 .setupModernAnimations("acr", AuxiliaryAttachments.AKaction)
                 .setupModernMagazineAnimations("acr", 
                 		Magazines.M4A1Mag, 
-                		Magazines.M38Mag, 
-                		Magazines.Stanag100,
+                		Magazines.M38Mag,
                 		Magazines.Stanag50,
                 		Magazines.Stanag60,
                 		Magazines.SOCOM_Mag)
