@@ -115,7 +115,6 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> M1A1Sight;
     public static ItemAttachment<Weapon> M1928ThompsonAction;
     public static ItemAttachment<Weapon> M1928Sight;
-    public static ItemAttachment<Weapon> CSA16pump;
     public static ItemAttachment<Weapon> R870part;
     public static ItemAttachment<Weapon> KedrAction;
     public static ItemAttachment<Weapon> KedrStock;
@@ -132,9 +131,6 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> GL06Cartridge;
     public static ItemAttachment<Weapon> M79Cartridge;
     public static ItemAttachment<Weapon> M32Cartridge;
-    public static ItemAttachment<Weapon> SSG42Barrels;
-    public static ItemAttachment<Weapon> HAR27Belt;
-    public static ItemAttachment<Weapon> HAR27Action;
     public static ItemAttachment<Weapon> ACRAction;
     public static ItemAttachment<Weapon> ACRRails;
     public static ItemAttachment<Weapon> M1014Action;
@@ -145,8 +141,6 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> RevolverSpeedLoaderBullets;
     public static ItemAttachment<Weapon> MagnumChamber;
     public static ItemAttachment<Weapon> RhinoChamber;
-    public static ItemAttachment<Weapon> TheDechardChamber;
-//    public static ItemAttachment<Weapon> P226Slide;
     public static ItemAttachment<Weapon> M1897Pump;
     public static ItemAttachment<Weapon> Super90Pump;
     public static ItemAttachment<Weapon> M32Main1B;
@@ -154,8 +148,6 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> M249Hatch;
     public static ItemAttachment<Weapon> M249Belt;
     public static ItemAttachment<Weapon> M249Action;
-    public static ItemAttachment<Weapon> FatmanGrip;
-    public static ItemAttachment<Weapon> FatmanRack;
     public static ItemAttachment<Weapon> BrowningAuto5Action;
     public static ItemAttachment<Weapon> M1GarandAction;
     public static ItemAttachment<Weapon> M1GarandMag;
@@ -173,37 +165,14 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> Origin12Action;
     public static ItemAttachment<Weapon> G95IronSights;
     public static ItemAttachment<Weapon> G95UprightIronSights;
-    public static ItemAttachment<Weapon> Tokyo90IronSights;
     public static ItemAttachment<Weapon> M14DMRRail;
-    public static ItemAttachment<Weapon> OSIPRAutoSpanker;
-    public static ItemAttachment<Weapon> OSIPRCell1;
-    public static ItemAttachment<Weapon> OSIPRCell2;
-    public static ItemAttachment<Weapon> OSIPRCellClaws;
-    public static ItemAttachment<Weapon> OSIPRCellFinger;
-    public static ItemAttachment<Weapon> OSIPRHeatEscaper;
     public static ItemAttachment<Weapon> K2C1Action;
     public static ItemAttachment<Weapon> ScorpionAction;
     public static ItemAttachment<Weapon> APC9Action;
     public static ItemAttachment<Weapon> ARX160Action;
-    public static ItemAttachment<Weapon> PanelUpper;
-    public static ItemAttachment<Weapon> PanelLower;
-    public static ItemAttachment<Weapon> RegulatorUpper;
-    public static ItemAttachment<Weapon> RegulatorLower;
-    public static ItemAttachment<Weapon> RegulatorRotator;
-    public static ItemAttachment<Weapon> RegulatorActionUpper;
-    public static ItemAttachment<Weapon> RegulatorActionLower;
-    public static ItemAttachment<Weapon> RegulatorAction;
-    public static ItemAttachment<Weapon> CyclerFront;
-    public static ItemAttachment<Weapon> CyclerBackLeft;
-    public static ItemAttachment<Weapon> CyclerBackRight;
-    public static ItemAttachment<Weapon> Cycler;
-    public static ItemAttachment<Weapon> M4hands;
     
     //Magazines
-    public static ItemAttachment<Weapon> P10Mag;
     public static ItemAttachment<Weapon> M41AMag;
-    public static ItemAttachment<Weapon> M56Mag;
-    public static ItemAttachment<Weapon> HAR27Mag;
     
     //Projectiles
     public static ItemAttachment<Weapon> ShotgunShell;
@@ -357,16 +326,6 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mwc.models.Super90Pump(), "gun.png").withName("Super90Pump")
                 .withRenderablePart().withTextureName("Dummy.png")
                 .build(MWC.modContext);
-        
-//        P226Slide = new AttachmentBuilder<Weapon>()
-//                .withCategory(AttachmentCategory.EXTRA)
-//                // .withCreativeTab(MWC.gunsTab)
-//                .withModel(new com.paneedah.mwc.models.P226Slide(), "P226.png")
-//                .withModel(new com.paneedah.mwc.models.P226rearsight(), "p226rearsight.png")
-//                .withModel(new com.paneedah.mwc.models.P226frontsight(), "p226frontsight.png")
-//                .withName("P226Slide")
-//                .withRenderablePart().withTextureName("Dummy.png")
-//                .build(MWC.modContext);
         
         PythonChamber = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA3)
@@ -1583,6 +1542,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mwc.models.Suppressor(), "gun")
                 .withName("AKmuzzle").withRenderablePart()
                 .withTextureName("Dummy.png").build(MWC.modContext);
+
     }
     
 }
