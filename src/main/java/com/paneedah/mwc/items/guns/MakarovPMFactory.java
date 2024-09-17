@@ -19,7 +19,6 @@ import com.paneedah.weaponlib.crafting.CraftingEntry;
 import net.minecraft.item.Item;
 import org.lwjgl.opengl.GL11;
 
-import java.util.Arrays;
 
 public class MakarovPMFactory implements GunFactory {
 
@@ -69,15 +68,7 @@ public class MakarovPMFactory implements GunFactory {
         		// Ads similarity divisor
         		1.0
         ))
-        .withInformationProvider(stack -> Arrays.asList(
-        "Type: Soviet Semi-Automatic Pistol", 
-        "Damage: 4.5", 
-        "Cartridge: 9x18mm",
-        "Fire Rate: SEMI",
-        "Rate of Fire: 30/100",
-        "Magazines:",
-        "8rnd 9x18mm PM Magazine"))
-        
+
         .withScreenShaking(RenderableState.SHOOTING, 
                 2.5f, // x 
                 0.1f, // y
@@ -90,10 +81,7 @@ public class MakarovPMFactory implements GunFactory {
         
         .withUnremovableAttachmentCategories(AttachmentCategory.BACKGRIP)
         .withUnremovableAttachmentCategories(AttachmentCategory.FRONTSIGHT)
-//        .withCompatibleAttachment(Attachments.PistolPlaceholder, true, (model) -> {
-//            GL11.glTranslatef(0.01f, -0.19f, -0.4f);
-//            GL11.glScaled(0F, 0F, 0F);
-//        })
+
         .withCompatibleAttachment(Attachments.MakarovPBBody, (model) -> {
             if(model instanceof MakarovPBBody) {
             	GL11.glScaled(1F, 1F, 1F);
@@ -130,8 +118,7 @@ public class MakarovPMFactory implements GunFactory {
             }
         })
         .withCompatibleAttachment(Magazines.MakarovMag, (model) -> {
-//            GL11.glRotatef(-5F, 1f, 0f, 0f);
-            GL11.glTranslatef(0F, 0F, 0.1F);
+
         })
         .withCompatibleAttachment(Attachments.SilencerPBS, (model) -> {
 //            GL11.glTranslatef(-0.23F, -1.14F, -4.92F);
@@ -144,9 +131,7 @@ public class MakarovPMFactory implements GunFactory {
             .withActionPiece(
             		Attachments.MakarovSlide)
             .withActionTransform(new Transform().withPosition(0, 0, 0.5))
-            //.withTextureName("M9")
-            //.withWeaponProximity(0.99F)
-            //.withYOffsetZoom(5F)
+
             .withEntityPositioning(itemStack -> {
                 GL11.glScaled(0.4F, 0.4F, 0.4F);
                 GL11.glRotatef(-90F, 0f, 0f, 4f);

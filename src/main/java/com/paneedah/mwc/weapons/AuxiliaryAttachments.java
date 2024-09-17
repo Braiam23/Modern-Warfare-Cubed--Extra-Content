@@ -371,8 +371,8 @@ public class AuxiliaryAttachments {
                 .build(MWC.modContext);
         
         ACRAction = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
-                .withModel(new com.paneedah.mwc.models.ACRAction(), "ACR.png")
-                .withModel(new com.paneedah.mwc.models.ACRAction2(), "gun.png")
+                .withModel(new com.paneedah.mwc.models.ACRAction(), "acr.png")
+                .withModel(new com.paneedah.mwc.models.ACRAction2(), "acr.png")
                 .withName("ACRAction").withRenderablePart()
                 .withTextureName("Dummy.png").build(MWC.modContext);
         

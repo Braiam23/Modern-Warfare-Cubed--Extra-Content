@@ -6413,7 +6413,7 @@ public class Attachments {
         MakarovSlide = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.FRONTSIGHT)
                 .withCreativeTab(MWC.ATTACHMENTS_TAB)
-                .withModel(new com.paneedah.mwc.models.MakarovPMSlide(), "gun.png")
+                .withModel(new com.paneedah.mwc.models.MakarovPMSlide(), "makarovpm.png")
                 .withModel(new com.paneedah.mwc.models.makarovrearsight(), "gun.png")
                 .withModel(new com.paneedah.mwc.models.makarovfrontsight(), "gun.png")
                 .withModernRecipe(
@@ -6455,7 +6455,7 @@ public class Attachments {
         MakarovPBSlide = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.FRONTSIGHT)
                 .withCreativeTab(MWC.ATTACHMENTS_TAB)
-                .withModel(new com.paneedah.mwc.models.MakarovPBSSlide(), "gun.png")
+                .withModel(new com.paneedah.mwc.models.MakarovPBSSlide(), "makarovpm.png")
                 .withModel(new com.paneedah.mwc.models.makarovrearsight(), "gun.png")
                 .withModernRecipe(
                         CraftingGroup.ATTACHMENT_MODIFICATION,
@@ -15331,7 +15331,7 @@ public class Attachments {
         SilencerPBS = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
                 .withCreativeTab(MWC.ATTACHMENTS_TAB)
                 .withRequiredAttachments(MakarovPBBody)
-                .withModel(new com.paneedah.mwc.models.MakarovPBSSilencer(), "MakarovPBSSilencer.png")
+                .withModel(new com.paneedah.mwc.models.MakarovPBSSilencer(), "makarovpm.png")
                 .withModernRecipe(
                         CraftingGroup.ATTACHMENT_NORMAL,
                         new CraftingEntry(MWCItems.gunmetalIngot, 2),
