@@ -4,12 +4,8 @@ import com.paneedah.mwc.MWC;
 import com.paneedah.mwc.init.MWCItems;
 import com.paneedah.mwc.models.*;
 import com.paneedah.mwc.proxies.CommonProxy;
-import com.paneedah.mwc.weapons.Attachments;
-import com.paneedah.mwc.weapons.Magazines;
-import com.paneedah.weaponlib.AttachmentCategory;
-import com.paneedah.weaponlib.RenderableState;
-import com.paneedah.weaponlib.Weapon;
-import com.paneedah.weaponlib.WeaponRenderer;
+import com.paneedah.mwc.weapons.*;
+import com.paneedah.weaponlib.*;
 import com.paneedah.weaponlib.animation.Transform;
 import com.paneedah.weaponlib.animation.Transition;
 import com.paneedah.weaponlib.compatibility.RecoilParam;
@@ -34,8 +30,6 @@ public class MakarovPMFactory implements GunFactory {
         .withMaxShots(1)
         .withShootSound("makarov")
         .withSilencedShootSound("colt_m45a1_silenced")
-        .withReloadSound("makarovreload")
-        .withUnloadSound("makarovunload")
         .withInspectSound("inspection")
         .withDrawSound("handgun_draw")
         .withReloadingTime(50)
@@ -92,8 +86,6 @@ public class MakarovPMFactory implements GunFactory {
           } 
         })
         .withCompatibleAttachment(Attachments.MakarovBody, true, (model) -> {
-//          GL11.glTranslatef(0.01f, -0.19f, -0.4f);
-//          GL11.glScaled(0F, 0F, 0F);
         })
         .withCompatibleAttachment(Attachments.MakarovSlide, true, (model) -> {
         	if(model instanceof MakarovPMSlide) {
@@ -121,8 +113,6 @@ public class MakarovPMFactory implements GunFactory {
 
         })
         .withCompatibleAttachment(Attachments.SilencerPBS, (model) -> {
-//            GL11.glTranslatef(-0.23F, -1.14F, -4.92F);
-//            GL11.glScaled(1.5F, 1.5F, 1.5F);
         })
         .withTextureNames("makarovpm")
         .withRenderer(new WeaponRenderer.Builder()
