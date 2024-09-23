@@ -4,9 +4,7 @@ import com.paneedah.mwc.MWC;
 import com.paneedah.mwc.init.MWCItems;
 import com.paneedah.mwc.models.*;
 import com.paneedah.mwc.proxies.CommonProxy;
-import com.paneedah.mwc.weapons.Attachments;
-import com.paneedah.mwc.weapons.AuxiliaryAttachments;
-import com.paneedah.mwc.weapons.Magazines;
+import com.paneedah.mwc.weapons.*;
 import com.paneedah.weaponlib.*;
 import com.paneedah.weaponlib.animation.Transform;
 import com.paneedah.weaponlib.animation.Transition;
@@ -15,8 +13,7 @@ import com.paneedah.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.paneedah.weaponlib.crafting.CraftingEntry;
 import net.minecraft.item.Item;
 import org.lwjgl.opengl.GL11;
-
-import java.util.Arrays;
+import com.paneedah.weaponlib.config.ModernConfigManager;
 
 public class NGSWRFactory implements GunFactory {
 
@@ -24,7 +21,6 @@ public class NGSWRFactory implements GunFactory {
 		return new Weapon.Builder()
 		
 		.withName("ngsw_r")
-		//.withAmmoCapacity(30)
 		.withFireRate(0.75f)
 		.withRecoil(3f)
 		.withZoom(0.9f)
@@ -33,9 +29,6 @@ public class NGSWRFactory implements GunFactory {
 		.withMaxShots(1, Integer.MAX_VALUE)
 		.withShootSound("m38_dmr")
 		.withSilencedShootSound("m4a1_silenced")
-		.withReloadSound("m4a1_reload")
-		.withUnloadSound("m4a1_unload")
-		.withEndOfShootSound("gun_click")
 		.withInspectSound("m4a1_inspection")
 		.withDrawSound("m4_draw")
 		.withReloadingTime(50)
@@ -69,14 +62,6 @@ public class NGSWRFactory implements GunFactory {
 				// Ads similarity divisor
 				1.0
 		))
-		.withInformationProvider(stack -> Arrays.asList(
-		"Type: Assault Rifle", 
-		"Damage: 7", 
-		"Cartridge: .277 FURY",
-		"Fire Rate: SEMI, AUTO",
-		"Rate of Fire: 75/100",
-		"Magazines:",
-        "20rnd .277 FURY Magazine"))
 		
 		.withModernRecipe( new
         		CraftingEntry(MWCItems.carbonComposite, 8), new
@@ -84,9 +69,9 @@ public class NGSWRFactory implements GunFactory {
         		CraftingEntry(MWCItems.steelIngot, 3))
 		 
 		 .withScreenShaking(RenderableState.SHOOTING, 
-	                1f, // x 
-	                1f, // y
-	                3f) // z
+	                1f,
+	                1f,
+	                3f)
 		 
         .withUnremovableAttachmentCategories(AttachmentCategory.GUARD)
         .withUnremovableAttachmentCategories(AttachmentCategory.BACKGRIP)
@@ -96,8 +81,6 @@ public class NGSWRFactory implements GunFactory {
             GL11.glScaled(0F, 0F, 0F);
         })
         .withCompatibleAttachment(Attachments.NGSWRRail, (model) -> {
-//            GL11.glTranslatef(0.01f, -0.19f, -0.4f);
-//            GL11.glScaled(0F, 0F, 0F);
         })
         .withCompatibleAttachment(Attachments.HK416FrontSight, renderContext -> {
         	PlayerWeaponInstance instance = renderContext.getWeaponInstance();
@@ -137,37 +120,9 @@ public class NGSWRFactory implements GunFactory {
                 GL11.glScaled(0.37F, 0.37F, 0.37F);
               }
         }, false, false)
-        .withCompatibleAttachment(Attachments.HK416Grip, (model) -> {
-          GL11.glTranslatef(0f, -0.075f, 0f);
-        })
         .withCompatibleAttachment(Attachments.HK416GripTan, true, (model) -> {
             GL11.glTranslatef(0f, -0.075f, 0f);
           })
-        .withCompatibleAttachment(Attachments.M4Grip, (model) -> {
-        	GL11.glTranslatef(0f, -0.075f, 0f);
-        })
-        .withCompatibleAttachment(Attachments.M4GripTan, (model) -> {
-        	GL11.glTranslatef(0f, -0.075f, 0f);
-        })
-        .withCompatibleAttachment(Attachments.M4GripGray, (model) -> {
-        	GL11.glTranslatef(0f, -0.075f, 0f);
-        })
-        .withCompatibleAttachment(Attachments.CollapsableMOEStock, (model) -> {
-        	GL11.glTranslatef(-0.02f, -0.47f, 0.5f);
-            GL11.glScaled(0.85F, 0.85F, 0.85F);
-        })
-        .withCompatibleAttachment(Attachments.MagpulCTRStock, (model) -> {
-        	GL11.glTranslatef(-0.02f, -0.47f, 0.5f);
-            GL11.glScaled(0.85F, 0.85F, 0.85F);
-        })
-        .withCompatibleAttachment(Attachments.MilSpecStock, (model) -> {
-        	GL11.glTranslatef(-0.02f, -0.47f, 0.5f);
-            GL11.glScaled(0.85F, 0.85F, 0.85F);
-        })
-        .withCompatibleAttachment(Attachments.HK416Stock, (model) -> {
-        	GL11.glTranslatef(-0.02f, -0.47f, 0.5f);
-            GL11.glScaled(0.85F, 0.85F, 0.85F);
-        })
         .withCompatibleAttachment(Attachments.MagpulCTRStockTan, (model) -> {
         	GL11.glTranslatef(-0.02f, -0.47f, 0.5f);
             GL11.glScaled(0.85F, 0.85F, 0.85F);
@@ -181,8 +136,6 @@ public class NGSWRFactory implements GunFactory {
             GL11.glScaled(0.85F, 0.85F, 0.85F);
         })
         .withCompatibleAttachment(Magazines.NGSWRMag, (model) -> {
-//		    GL11.glTranslatef(-0.333F, 0.45F, -1.4F);
-//            GL11.glScaled(1.02F, 1.35F, 1.33F);
         })
 		.withCompatibleAttachment(AuxiliaryAttachments.AR15Action, true, (model) -> {
             GL11.glTranslatef(-0.175F, -1.535F, -0.6F);
@@ -245,16 +198,6 @@ public class NGSWRFactory implements GunFactory {
             }
         })
 		
-		.withCompatibleAttachment(Attachments.LeupoldRailScope, (player, stack) -> {
-		            GL11.glTranslatef(-0.16F, -1.53F, -1.8F);
-		            GL11.glScaled(0.46F, 0.46F, 0.46F);
-        },(model) -> {
-             if(model instanceof JPUreticle) {
-                GL11.glTranslatef(0.076F, -0.67F, 4.0251F);
-                GL11.glScaled(0.04F, 0.04F, 0.04F);
-            }
-        })
-		
 		.withCompatibleAttachment(Attachments.MicroReflex, (player, stack) -> {
             GL11.glTranslatef(-0.15F, -2.2F, -1F);
             GL11.glScaled(0.35F, 0.35F, 0.35F);
@@ -263,8 +206,6 @@ public class NGSWRFactory implements GunFactory {
                     GL11.glTranslatef(0.08F, 0.97F, -0.4F);
                     GL11.glScaled(0.15F, 0.15F, 0.15F);
                 } else if (model instanceof SightMount) {
-//                	GL11.glTranslatef(-0.15F, -1.82F, -1F);
-//                    GL11.glScaled(0.4F, 0.4F, 0.4F);
                 }
             })
 		
@@ -379,6 +320,15 @@ public class NGSWRFactory implements GunFactory {
             GL11.glScaled(0.15F, 0.15F, 0.15F);
         }
         })
+		.withCompatibleAttachment(Attachments.SIGTANGO6T, (player, stack) -> {
+            GL11.glTranslatef(-0.16F, -1.53F, -1.7F);
+            GL11.glScaled(0.5F, 0.5F, 0.45F);
+        },(model) -> {
+             if(model instanceof JPUreticle) {
+                 GL11.glTranslatef(0.076F, -0.67F, 4.0251F);
+                 GL11.glScaled(0.04F, 0.04F, 0.04F);
+            }
+        })
 		.withCompatibleAttachment(Attachments.Grip2, (model) -> {
 			GL11.glTranslatef(-0.2F, -0.37F, -3F);
 			GL11.glScaled(1F, 1F, 1F);
@@ -422,7 +372,6 @@ public class NGSWRFactory implements GunFactory {
 			.withEntityPositioning(itemStack -> {
 				GL11.glScaled(0.5F, 0.5F, 0.5F);
 				GL11.glTranslatef(0, 0f, 3f);
-				GL11.glRotatef(-90F, 0f, 0f, 4f);
 			})
 			.withInventoryPositioning(itemStack -> {
 			    GL11.glScaled(0.35F, 0.35F, 0.35F);
@@ -534,7 +483,7 @@ public class NGSWRFactory implements GunFactory {
                     )
 			
             .withFirstPersonPositioningZooming((renderContext) -> {
-				GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+				GL11.glScalef(3.0f, 3.0f, 3f);
 				GL11.glTranslatef(0.14f, 1.36f, -0.2f);
 				
 				// Standard Iron Sight Zoom
@@ -627,7 +576,11 @@ public class NGSWRFactory implements GunFactory {
                 	GL11.glTranslatef(0F, 0.07f, 0.3f);
                 } 
 				
-				// Everything else
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.SIGTANGO6T)) {
+                    GL11.glTranslatef(0.001F, 0.03f, -0.1f);
+				}
+				
+				
 				else {
 				}
 			

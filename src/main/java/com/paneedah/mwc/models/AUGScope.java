@@ -5,7 +5,7 @@ import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-// Made with Blockbench 4.7.4
+// Made with Blockbench 4.10.4
 // Exported for Minecraft version 1.7 - 1.12
 // Paste this class into your mod and generate all required imports
 
@@ -23,14 +23,14 @@ public class AUGScope extends ModelWithAttachments {
 	private final ModelRenderer scope11_r1;
 
 	public AUGScope() {
-		textureWidth = 300;
-		textureHeight = 300;
+		textureWidth = 270;
+		textureHeight = 270;
 
 		scope = new ModelRenderer(this);
 		scope.setRotationPoint(-1.4231F, -14.0812F, -15.3907F);
 		scope.cubeList.add(new ModelBox(scope, 14, 7, -1.2769F, 1.5812F, -10.3093F, 2, 1, 4, 0.0F, false));
 		scope.cubeList.add(new ModelBox(scope, 74, 87, 0.1231F, 1.5812F, -10.3093F, 1, 1, 4, 0.0F, false));
-		scope.cubeList.add(new ModelBox(scope, 15, 91, -1.0769F, 0.0812F, 9.7907F, 2, 2, 1, 0.0F, false));
+		scope.cubeList.add(new ModelBox(scope, 98, 14, -1.0769F, 0.0812F, 9.7907F, 2, 2, 1, 0.0F, false));
 
 		scope6_r1 = new ModelRenderer(this);
 		scope6_r1.setRotationPoint(1.4231F, -30.5821F, 33.7018F);
@@ -42,7 +42,7 @@ public class AUGScope extends ModelWithAttachments {
 		scope5_r1.setRotationPoint(1.4231F, -40.0547F, 29.3772F);
 		scope.addChild(scope5_r1);
 		setRotationAngle(scope5_r1, 2.6025F, 0.0F, 0.0F);
-		scope5_r1.cubeList.add(new ModelBox(scope5_r1, 77, 44, -2.5F, -41.0F, -3.8F, 2, 2, 2, 0.0F, false));
+		scope5_r1.cubeList.add(new ModelBox(scope5_r1, 32, 87, -2.5F, -41.0F, -3.8F, 2, 2, 2, 0.0F, false));
 
 		scope4_r1 = new ModelRenderer(this);
 		scope4_r1.setRotationPoint(1.4231F, 14.3294F, 45.2261F);
@@ -66,19 +66,19 @@ public class AUGScope extends ModelWithAttachments {
 		scope1_r1.setRotationPoint(1.4231F, 10.2937F, 35.5059F);
 		scope.addChild(scope1_r1);
 		setRotationAngle(scope1_r1, 0.8179F, 0.0F, 0.0F);
-		scope1_r1.cubeList.add(new ModelBox(scope1_r1, 16, 134, -2.5F, -37.1F, -22.0F, 2, 1, 8, 0.0F, false));
+		scope1_r1.cubeList.add(new ModelBox(scope1_r1, 134, 41, -2.5F, -37.1F, -22.0F, 2, 1, 8, 0.0F, false));
 
 		scope13_r1 = new ModelRenderer(this);
 		scope13_r1.setRotationPoint(1.4231F, 31.872F, 23.2297F);
 		scope.addChild(scope13_r1);
 		setRotationAngle(scope13_r1, 0.2231F, 0.0F, 0.0F);
-		scope13_r1.cubeList.add(new ModelBox(scope13_r1, 88, 66, -3.0F, -38.1F, -23.8F, 3, 1, 1, 0.0F, false));
+		scope13_r1.cubeList.add(new ModelBox(scope13_r1, 15, 91, -3.0F, -38.1F, -23.8F, 3, 1, 1, 0.0F, false));
 
 		scope12_r1 = new ModelRenderer(this);
 		scope12_r1.setRotationPoint(1.4231F, 31.9582F, 23.0602F);
 		scope.addChild(scope12_r1);
 		setRotationAngle(scope12_r1, 0.2231F, 0.0F, 0.0F);
-		scope12_r1.cubeList.add(new ModelBox(scope12_r1, 38, 14, -2.0F, -37.3F, -23.5F, 1, 1, 1, 0.0F, false));
+		scope12_r1.cubeList.add(new ModelBox(scope12_r1, 45, 27, -2.0F, -37.3F, -23.5F, 1, 1, 1, 0.0F, false));
 
 		scope11_r1 = new ModelRenderer(this);
 		scope11_r1.setRotationPoint(1.4231F, 31.4913F, 22.8287F);

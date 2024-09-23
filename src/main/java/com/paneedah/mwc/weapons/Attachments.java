@@ -4,6 +4,7 @@ import com.paneedah.mwc.MWC;
 import com.paneedah.mwc.init.MWCItems;
 import com.paneedah.mwc.models.*;
 import com.paneedah.weaponlib.*;
+import com.paneedah.weaponlib.config.ModernConfigManager;
 import com.paneedah.weaponlib.crafting.CraftingEntry;
 import com.paneedah.weaponlib.crafting.CraftingGroup;
 import net.minecraft.client.renderer.GlStateManager;
@@ -236,8 +237,7 @@ public class Attachments {
     
     
     public static ItemAttachment<Weapon> AR57Handguard;
-    
-    public static ItemAttachment<Weapon> NTW20HandguardRAIL;
+
     
     public static ItemAttachment<Weapon> EF88Handguard;
     
@@ -472,8 +472,8 @@ public class Attachments {
     public static ItemAttachment<Weapon> RailRiser;
     public static ItemAttachment<Weapon> M1911Slide;
     public static ItemAttachment<Weapon> M1911Body;
-    public static ItemAttachment<Weapon> M191144MagSlide;
-    public static ItemAttachment<Weapon> M191144MagBody;
+    public static ItemAttachment<Weapon> M45A1CQBPBody;
+    public static ItemAttachment<Weapon> M45A1CQBPSlide;
     public static ItemAttachment<Weapon> M9A1Slide;
     public static ItemAttachment<Weapon> M9A1Body;
     public static ItemAttachment<Weapon> SamuraiEdgeSlide;
@@ -482,10 +482,6 @@ public class Attachments {
     public static ItemAttachment<Weapon> DesertEagleBody;
     public static ItemAttachment<Weapon> DesertEagleSlide;
     public static ItemAttachment<Weapon> DesertEagleLongBody;
-    public static ItemAttachment<Weapon> DesertEagleBodyGolden;
-    public static ItemAttachment<Weapon> DesertEagleSlideGolden;
-    public static ItemAttachment<Weapon> DesertEagleBodyBlack;
-    public static ItemAttachment<Weapon> DesertEagleSlideBlack;
     public static ItemAttachment<Weapon> Glock19Body;
 //    public static ItemAttachment<Weapon> Glock18CBody;
     public static ItemAttachment<Weapon> Glock19XBody;
@@ -544,6 +540,8 @@ public class Attachments {
     public static ItemAttachment<Weapon> MAC10Action;
     public static ItemAttachment<Weapon> F2000TRRail;
     public static ItemAttachment<Weapon> F2000IronSights;
+
+	public static ItemAttachment<Weapon> SIGTANGO6T;
 
     public static void init(Object mod) {
 
@@ -2420,7 +2418,7 @@ public class Attachments {
                 .withCreativeTab(MWC.ATTACHMENTS_TAB)
                 .withModel(new com.paneedah.mwc.models.M249UpperHandGuard(), "m249.png")
                 .withInventoryModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.M249UpperHandGuard) {
+                    if (model instanceof M249UpperHandGuard) {
                         GL11.glTranslatef(-0.6F, -0.6F, 1.8F);
                         GL11.glRotatef(10F, 1f, 0f, 0f);
                         GL11.glRotatef(-190F, 0f, 1f, 0f);
@@ -2489,44 +2487,9 @@ public class Attachments {
                 .withName("Mk48UpperHandGuard").withTextureName("Dummy.png")
                 .build(MWC.modContext);
 
-        AUGA1handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
+        AUGA2handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
                 .withCreativeTab(MWC.ATTACHMENTS_TAB)
-                .withModel(new com.paneedah.mwc.models.AUGHandguard(), "aug.png")
-                .withInventoryModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.AUGHandguard) {
-                        GL11.glTranslatef(-0.6F, 0.6F, 0.2F);
-                        GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-190F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(1F, 1F, 1f);
-                    } else {
-                        GL11.glScalef(0f, 0f, 0f);
-                    }
-                }).withFirstPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.AUGHandguard) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.AUGHandguard) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("AUGA1").withTextureName("Dummy.png")
-                .build(MWC.modContext);
-
-        AUGA2handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
-                .withCreativeTab(MWC.ATTACHMENTS_TAB)
-                .withModel(new com.paneedah.mwc.models.AUGScopeRail(), "aug.png")
+                .withModel(new com.paneedah.mwc.models.AUGScopeRail(), "augscope.png")
                 .withModel(new com.paneedah.mwc.models.AKRail(), "akrail.png")
                 .withInventoryModelPositioning(model -> {
                     if (model instanceof com.paneedah.mwc.models.AUGScopeRail) {
@@ -2560,7 +2523,7 @@ public class Attachments {
                 .withName("AUGA2handguard").withTextureName("Dummy.png")
                 .build(MWC.modContext);
 
-        AUGA3handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
+        AUGA3handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
                 .withCreativeTab(MWC.ATTACHMENTS_TAB)
                 .withModel(new com.paneedah.mwc.models.AUGA3M1(), "aug.png")
                 .withModel(new com.paneedah.mwc.models.AKRail(), "akrail.png")
@@ -2596,43 +2559,7 @@ public class Attachments {
                 .withName("AUGA3handguard").withTextureName("Dummy.png")
                 .build(MWC.modContext);
 
-        EF88Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
-                .withCreativeTab(MWC.ATTACHMENTS_TAB)
-                .withModel(new com.paneedah.mwc.models.AUGEF88(), "aug.png")
-                .withModel(new com.paneedah.mwc.models.AKRail(), "akrail.png")
-                .withInventoryModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.AUGEF88) {
-                        GL11.glTranslatef(-0.6F, -0.3F, 0.2F);
-                        GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-190F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7f);
-                    } else {
-                        GL11.glScalef(0f, 0f, 0f);
-                    }
-                }).withFirstPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.AUGEF88) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.AUGEF88) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("EF88Handguard").withTextureName("Dummy.png")
-                .build(MWC.modContext);
-
-        AUGDefaultKit = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
+        AUGDefaultKit = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
                 .withCreativeTab(MWC.ATTACHMENTS_TAB)
                 .withModel(new com.paneedah.mwc.models.AUG9mmConversionkit(), "aug.png")
                 .withInventoryModelPositioning(model -> {
@@ -2667,7 +2594,7 @@ public class Attachments {
                 .withName("AUGDefaultKit").withTextureName("Dummy.png")
                 .build(MWC.modContext);
 
-        AUGParaConversion = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
+        AUGParaConversion = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
                 .withCreativeTab(MWC.ATTACHMENTS_TAB)
                 .withModel(new com.paneedah.mwc.models.AUG9mmConversionkit(), "aug.png")
                 .withInventoryModelPositioning(model -> {
@@ -2702,7 +2629,7 @@ public class Attachments {
                 .withName("AUGParaConversion").withTextureName("Dummy.png")
                 .build(MWC.modContext);
 
-        AUGA3extGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
+        AUGA3extGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(MWC.ATTACHMENTS_TAB)
                 .withModel(new com.paneedah.mwc.models.AUGA3M1_Ext(), "aug.png")
                 .withModel(new com.paneedah.mwc.models.AKRail(), "akrail.png")
@@ -5063,9 +4990,9 @@ public class Attachments {
         M1911Body = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(MWC.ATTACHMENTS_TAB)
-                .withModel(new com.paneedah.mwc.models.M1911Body(), "m1911.png")
+                .withModel(new com.paneedah.mwc.models.M1911(), "m1911.png")
                 .withInventoryModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.M1911Body) {
+                    if (model instanceof com.paneedah.mwc.models.M1911) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.1F);
                         GL11.glRotatef(10F, 1f, 0f, 0f);
                         GL11.glRotatef(-190F, 0f, 1f, 0f);
@@ -5075,7 +5002,7 @@ public class Attachments {
                         GL11.glScalef(0f, 0f, 0f);
                     }
                 }).withFirstPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.M1911Body) {
+                    if (model instanceof com.paneedah.mwc.models.M1911) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.4F);
                         GL11.glRotatef(30F, 0f, 1f, 0f);
                         GL11.glScaled(0.7F, 0.7F, 0.7F);
@@ -5084,7 +5011,7 @@ public class Attachments {
                     }
 
                 }).withThirdPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.M1911Body) {
+                    if (model instanceof com.paneedah.mwc.models.M1911) {
                         GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
                         GL11.glRotatef(-50F, 0f, 1f, 0f);
                         GL11.glRotatef(80F, 1f, 0f, 0f);
@@ -5097,15 +5024,15 @@ public class Attachments {
                 .withRenderablePart().withTextureName("Dummy.png")
                 .build(MWC.modContext);
 
-        M191144MagSlide = new AttachmentBuilder<Weapon>()
+        M45A1CQBPSlide = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.FRONTSIGHT)
                 .withCreativeTab(MWC.ATTACHMENTS_TAB)
-                .withModel(new com.paneedah.mwc.models.M191144MagSlide(), "M191144MagSlide.png")
+                .withModel(new com.paneedah.mwc.models.M45A1Slide(), "m45.png")
                 .withModel(new com.paneedah.mwc.models.M1911frontsight(), "gun")
-                .withModel(new com.paneedah.mwc.models.makarovrearsight(), "gun")
+                .withModel(new com.paneedah.mwc.models.M1911rearsight(), "gun")
                 .withInventoryModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.M191144MagSlide) {
-                        GL11.glTranslatef(-0.6F, 0.2F, -0.4F);
+                    if (model instanceof com.paneedah.mwc.models.M45A1Slide) {
+                        GL11.glTranslatef(-0.6F, 0.2F, -0.3F);
                         GL11.glRotatef(10F, 1f, 0f, 0f);
                         GL11.glRotatef(-190F, 0f, 1f, 0f);
                         GL11.glRotatef(0F, 0f, 0f, 1f);
@@ -5114,7 +5041,7 @@ public class Attachments {
                         GL11.glScalef(0f, 0f, 0f);
                     }
                 }).withFirstPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.M191144MagSlide) {
+                    if (model instanceof com.paneedah.mwc.models.M45A1Slide) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.4F);
                         GL11.glRotatef(30F, 0f, 1f, 0f);
                         GL11.glScaled(0.7F, 0.7F, 0.7F);
@@ -5123,7 +5050,7 @@ public class Attachments {
                     }
 
                 }).withThirdPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.M191144MagSlide) {
+                    if (model instanceof com.paneedah.mwc.models.M45A1Slide) {
                         GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
                         GL11.glRotatef(-50F, 0f, 1f, 0f);
                         GL11.glRotatef(80F, 1f, 0f, 0f);
@@ -5132,17 +5059,17 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M191144MagSlide")
+                .withName("M45A1CQBPSlide")
                 .withRenderablePart().withTextureName("Dummy.png")
                 .build(MWC.modContext);
 
-        M191144MagBody = new AttachmentBuilder<Weapon>()
+        M45A1CQBPBody = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(MWC.ATTACHMENTS_TAB)
-                .withModel(new com.paneedah.mwc.models.M191144MagBody(), "M191144Mag.png")
+                .withModel(new com.paneedah.mwc.models.M45A1(), "m45.png")
                 .withInventoryModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.M191144MagBody) {
-                        GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
+                    if (model instanceof com.paneedah.mwc.models.M45A1) {
+                        GL11.glTranslatef(-0.6F, -0.1F, -0.1F);
                         GL11.glRotatef(10F, 1f, 0f, 0f);
                         GL11.glRotatef(-190F, 0f, 1f, 0f);
                         GL11.glRotatef(0F, 0f, 0f, 1f);
@@ -5151,7 +5078,7 @@ public class Attachments {
                         GL11.glScalef(0f, 0f, 0f);
                     }
                 }).withFirstPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.M191144MagBody) {
+                    if (model instanceof com.paneedah.mwc.models.M45A1) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.4F);
                         GL11.glRotatef(30F, 0f, 1f, 0f);
                         GL11.glScaled(0.7F, 0.7F, 0.7F);
@@ -5160,7 +5087,7 @@ public class Attachments {
                     }
 
                 }).withThirdPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.M191144MagBody) {
+                    if (model instanceof com.paneedah.mwc.models.M45A1) {
                         GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
                         GL11.glRotatef(-50F, 0f, 1f, 0f);
                         GL11.glRotatef(80F, 1f, 0f, 0f);
@@ -5169,7 +5096,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M191144MagBody")
+                .withName("M45A1CQBPBody")
                 .withRenderablePart().withTextureName("Dummy.png")
                 .build(MWC.modContext);
 
@@ -5484,152 +5411,6 @@ public class Attachments {
                     }
                 })
                 .withName("DesertEagleLongBody")
-                .withRenderablePart().withTextureName("Dummy.png")
-                .build(MWC.modContext);
-
-        DesertEagleBodyGolden = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.BACKGRIP)
-                .withCreativeTab(MWC.ATTACHMENTS_TAB)
-                .withModel(new com.paneedah.mwc.models.DesertEagle(), "deaglegolden.png")
-                .withInventoryModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.DesertEagle) {
-                        GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
-                        GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-190F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(0.9F, 0.9F, 0.9f);
-                    } else {
-                        GL11.glScalef(0f, 0f, 0f);
-                    }
-                }).withFirstPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.DesertEagle) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.DesertEagle) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("DesertEagleBodyGolden")
-                .withRenderablePart().withTextureName("Dummy.png")
-                .build(MWC.modContext);
-
-        DesertEagleSlideGolden = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.FRONTSIGHT)
-                .withModel(new com.paneedah.mwc.models.DesertEagleSlide(), "deaglegolden.png")
-                .withInventoryModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.DesertEagleSlide) {
-                        GL11.glTranslatef(-0.6F, 0.2F, -0.4F);
-                        GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-190F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(0.9F, 0.9F, 0.9f);
-                    } else {
-                        GL11.glScalef(0f, 0f, 0f);
-                    }
-                }).withFirstPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.DesertEagleSlide) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.DesertEagleSlide) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("DesertEagleSlideGolden")
-                .withRenderablePart().withTextureName("Dummy.png")
-                .build(MWC.modContext);
-
-        DesertEagleBodyBlack = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.BACKGRIP)
-                .withCreativeTab(MWC.ATTACHMENTS_TAB)
-                .withModel(new com.paneedah.mwc.models.DesertEagle(), "deagleblack.png")
-                .withInventoryModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.DesertEagle) {
-                        GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
-                        GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-190F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(0.9F, 0.9F, 0.9f);
-                    } else {
-                        GL11.glScalef(0f, 0f, 0f);
-                    }
-                }).withFirstPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.DesertEagle) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.DesertEagle) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("DesertEagleBodyBlack")
-                .withRenderablePart().withTextureName("Dummy.png")
-                .build(MWC.modContext);
-
-        DesertEagleSlideBlack = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.FRONTSIGHT)
-                .withModel(new com.paneedah.mwc.models.DesertEagleSlide(), "deagleblack.png")
-                .withInventoryModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.DesertEagleSlide) {
-                        GL11.glTranslatef(-0.6F, 0.2F, -0.4F);
-                        GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-190F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(0.9F, 0.9F, 0.9f);
-                    } else {
-                        GL11.glScalef(0f, 0f, 0f);
-                    }
-                }).withFirstPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.DesertEagleSlide) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.DesertEagleSlide) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("DesertEagleSlideBlack")
                 .withRenderablePart().withTextureName("Dummy.png")
                 .build(MWC.modContext);
 
@@ -8491,42 +8272,6 @@ public class Attachments {
                     }
                 })
                 .withName("AR57Handguard").withTextureName("Dummy.png")
-                .build(MWC.modContext);
-
-        NTW20HandguardRAIL = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
-                .withCreativeTab(MWC.ATTACHMENTS_TAB)
-                .withModel(new com.paneedah.mwc.models.NTW20Guard(), "gun.png")
-                .withModel(new com.paneedah.mwc.models.AKRail(), "akrail.png")
-                .withInventoryModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.NTW20Guard) {
-                        GL11.glTranslatef(-0.6F, -0.4F, 0.9F);
-                        GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-190F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(0.9F, 0.9F, 0.9f);
-                    } else {
-                        GL11.glScalef(0f, 0f, 0f);
-                    }
-                }).withFirstPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.NTW20Guard) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.NTW20Guard) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("NTW20Guard").withTextureName("Dummy.png")
                 .build(MWC.modContext);
 
         M16HandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -12611,7 +12356,7 @@ public class Attachments {
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail,
                         M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard,
-                        M4Receiver, VLTORReceiver, AR57Receiver, NTW20HandguardRAIL, Attachments.EF88Handguard, KrissVectorReceiver,
+                        M4Receiver, VLTORReceiver, AR57Receiver, Attachments.EF88Handguard, KrissVectorReceiver,
                         Vector556Handguard, M1CarbineScoutHandguard, Origin12Grip, HKS20Grip, G2ContenderBarrelLong,
                         HK417Receiver, HK417ReceiverTan)
                 .withCrosshair("LP")
@@ -12845,7 +12590,7 @@ public class Attachments {
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail,
                         M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard,
-                        M4Receiver, VLTORReceiver, AR57Receiver, NTW20HandguardRAIL, Attachments.EF88Handguard, KrissVectorReceiver,
+                        M4Receiver, VLTORReceiver, AR57Receiver, Attachments.EF88Handguard, KrissVectorReceiver,
                         Vector556Handguard, M1CarbineScoutHandguard, Origin12Grip, HKS20Grip,
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack, M14TriRailCover,
                         M14TriRailCover, Mk14TanBody, Mk14SnowBody, Mk14BlackBody, SSG08Chassis, SA58DustCover,
@@ -12987,7 +12732,7 @@ public class Attachments {
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail,
                         M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard,
-                        M4Receiver, VLTORReceiver, AR57Receiver, NTW20HandguardRAIL,
+                        M4Receiver, VLTORReceiver, AR57Receiver,
                         Attachments.EF88Handguard, KrissVectorReceiver,
                         Vector556Handguard, M1CarbineScoutHandguard, Origin12Grip, HKS20Grip,
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack, FABDefenseMount,
@@ -13059,7 +12804,7 @@ public class Attachments {
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder,
                         AUGA2handguard, AUGA3handguard,
-                        M4Receiver, VLTORReceiver, AR57Receiver, NTW20HandguardRAIL,
+                        M4Receiver, VLTORReceiver, AR57Receiver,
                         Attachments.EF88Handguard, KrissVectorReceiver,
                         Vector556Handguard, M1CarbineScoutHandguard,
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack, M14Rail, SSG08Chassis,
@@ -13144,7 +12889,7 @@ public class Attachments {
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, MIMP5TRRail,
                         MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder,
                         AUGA2handguard, AUGA3handguard,
-                        M4Receiver, VLTORReceiver, AR57Receiver, NTW20HandguardRAIL,
+                        M4Receiver, VLTORReceiver, AR57Receiver,
                         Attachments.EF88Handguard, KrissVectorReceiver,
                         Vector556Handguard, M1CarbineScoutHandguard, Origin12Grip, HKS20Grip,
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack, M14Rail,
@@ -13214,7 +12959,7 @@ public class Attachments {
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail,
                         P90Placeholder, AUGA2handguard, AUGA3handguard,
-                        M4Receiver, VLTORReceiver, AR57Receiver, NTW20HandguardRAIL,
+                        M4Receiver, VLTORReceiver, AR57Receiver,
                         Attachments.EF88Handguard, KrissVectorReceiver,
                         Vector556Handguard, M1CarbineScoutHandguard, Origin12Grip, HKS20Grip,
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack,
@@ -13285,7 +13030,7 @@ public class Attachments {
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, MIMP5TRRail,
                         MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder,
                         AUGA2handguard, AUGA3handguard,
-                        M4Receiver, VLTORReceiver, AR57Receiver, NTW20HandguardRAIL,
+                        M4Receiver, VLTORReceiver, AR57Receiver,
                         Attachments.EF88Handguard, KrissVectorReceiver,
                         Vector556Handguard, M1CarbineScoutHandguard, Origin12Grip, HKS20Grip,
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack,
@@ -13357,7 +13102,7 @@ public class Attachments {
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail,
                         P90Placeholder, AUGA2handguard, AUGA3handguard,
-                        M4Receiver, VLTORReceiver, AR57Receiver, NTW20HandguardRAIL,
+                        M4Receiver, VLTORReceiver, AR57Receiver,
                         Attachments.EF88Handguard, KrissVectorReceiver,
                         Vector556Handguard, M1CarbineScoutHandguard, Origin12Grip, HKS20Grip,
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack, M14Rail,
@@ -13432,7 +13177,7 @@ public class Attachments {
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail,
                         P90Placeholder, AUGA2handguard, AUGA3handguard,
-                        M4Receiver, VLTORReceiver, AR57Receiver, NTW20HandguardRAIL,
+                        M4Receiver, VLTORReceiver, AR57Receiver,
                         Attachments.EF88Handguard, KrissVectorReceiver,
                         Vector556Handguard, M1CarbineScoutHandguard, Origin12Grip, HKS20Grip,
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack,
@@ -13502,7 +13247,7 @@ public class Attachments {
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail,
                         P90Placeholder, AUGA2handguard, AUGA3handguard,
-                        M4Receiver, VLTORReceiver, AR57Receiver, NTW20HandguardRAIL,
+                        M4Receiver, VLTORReceiver, AR57Receiver,
                         Attachments.EF88Handguard, KrissVectorReceiver,
                         Vector556Handguard, M1CarbineScoutHandguard, Origin12Grip, HKS20Grip,
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack,
@@ -13572,7 +13317,7 @@ public class Attachments {
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail,
                         P90Placeholder, AUGA2handguard, AUGA3handguard,
-                        M4Receiver, VLTORReceiver, AR57Receiver, NTW20HandguardRAIL,
+                        M4Receiver, VLTORReceiver, AR57Receiver,
                         Attachments.EF88Handguard, KrissVectorReceiver,
                         Vector556Handguard, M1CarbineScoutHandguard, Origin12Grip, HKS20Grip,
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack,
@@ -13643,7 +13388,7 @@ public class Attachments {
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail,
                         P90Placeholder, AUGA2handguard, AUGA3handguard,
-                        M4Receiver, VLTORReceiver, AR57Receiver, NTW20HandguardRAIL,
+                        M4Receiver, VLTORReceiver, AR57Receiver,
                         Attachments.EF88Handguard, KrissVectorReceiver,
                         Vector556Handguard, M1CarbineScoutHandguard, Origin12Grip, HKS20Grip,
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack,
@@ -13713,7 +13458,7 @@ public class Attachments {
                 .withRequiredAttachments(FABDefenseMount, VeprDustCover, AK15DustCover,
                         Placeholder, MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail,
                         P90Placeholder, AUGA2handguard, AUGA3handguard,
-                        M4Receiver, VLTORReceiver, AR57Receiver, NTW20HandguardRAIL,
+                        M4Receiver, VLTORReceiver, AR57Receiver,
                         Attachments.EF88Handguard, KrissVectorReceiver,
                         Vector556Handguard, DesertEagleSlide, M1CarbineScoutHandguard, Origin12Grip, HKS20Grip,
                         M14TriRailCover, Mk14TanBody, Mk14SnowBody, Mk14BlackBody, APC9Placeholder,
@@ -13776,7 +13521,7 @@ public class Attachments {
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail,
                         P90Placeholder, AUGA2handguard, AUGA3handguard,
-                        M4Receiver, VLTORReceiver, AR57Receiver, NTW20HandguardRAIL
+                        M4Receiver, VLTORReceiver, AR57Receiver
                         , Attachments.EF88Handguard, KrissVectorReceiver,
                         Vector556Handguard, M1CarbineScoutHandguard, Origin12Grip, HKS20Grip,
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack,
@@ -13846,7 +13591,7 @@ public class Attachments {
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail,
                         P90Placeholder, AUGA2handguard, AUGA3handguard,
-                        M4Receiver, VLTORReceiver, AR57Receiver, NTW20HandguardRAIL,
+                        M4Receiver, VLTORReceiver, AR57Receiver,
                         Attachments.EF88Handguard, KrissVectorReceiver,
                         Vector556Handguard, M1CarbineScoutHandguard, Origin12Grip, HKS20Grip,
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack,
@@ -13967,7 +13712,7 @@ public class Attachments {
                 .withModel(new com.paneedah.mwc.models.HP(), "gun.png")
                 .withModel(new com.paneedah.mwc.models.JPUreticle(), "black.png")
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, Kar98Krail,
-                        M4Receiver, VLTORReceiver, AR57Receiver, NTW20HandguardRAIL)
+                        M4Receiver, VLTORReceiver, AR57Receiver)
                 .withFirstPersonModelPositioning(model -> {
                     if (model instanceof com.paneedah.mwc.models.HP) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.4F);
@@ -14019,7 +13764,7 @@ public class Attachments {
                 .withCategory(AttachmentCategory.SCOPE)
                 .withCreativeTab(MWC.ATTACHMENTS_TAB)
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, Kar98Krail,
-                        M4Receiver, VLTORReceiver, AR57Receiver, NTW20HandguardRAIL,
+                        M4Receiver, VLTORReceiver, AR57Receiver,
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack, M14Rail,
                         SSG08Chassis, SA58DustCover, M16A1ScopeMount, G2ContenderBarrelLong, S710Receiver,
                         Beowulf50CalReceiver, FamasF1ScopeMount,
@@ -14314,9 +14059,9 @@ public class Attachments {
                 })
                 .withCreativeTab(MWC.ATTACHMENTS_TAB)
                 .withCrosshair("HP")
-                .withModel(new com.paneedah.mwc.models.AUGScope_scope(), "gun.png")
+                .withModel(new com.paneedah.mwc.models.AUGScope_scope(), "augscope.png")
                 .withModel(new com.paneedah.mwc.models.JPUreticle(), "black.png")
-                .withModel(new com.paneedah.mwc.models.AUGScope(), "gun.png")
+                .withModel(new com.paneedah.mwc.models.AUGScope(), "aug.png")
                 .withRequiredAttachments(AUGA1handguard)
                 .withFirstPersonModelPositioning(model -> {
                     if (model instanceof com.paneedah.mwc.models.AUGScope_scope) {
@@ -16570,7 +16315,7 @@ public class Attachments {
 
         Silencer65x39 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
                 .withCreativeTab(MWC.ATTACHMENTS_TAB)
-                .withModel(new com.paneedah.mwc.models.Suppressor556x39(), "gun.png")
+                .withModel(new com.paneedah.mwc.models.Suppressor556x39(), "sigslxsilencer.png")
                 .withModernRecipe(
                         CraftingGroup.ATTACHMENT_NORMAL,
                         new CraftingEntry(MWCItems.gunmetalIngot, 1),
@@ -17425,6 +17170,64 @@ public class Attachments {
                 .withName("F2000IronSights")
                 .withRenderablePart().withTextureName("Dummy.png")
                 .build(MWC.modContext);
+				
+        SIGTANGO6T = new ItemScope.Builder()
+                .withSniperReticle(Reticles.RETICLE_1)
+                .withOpticalZoom()
+                .withZoomRange(0.10f, 0.04f)
+                .withViewfinderPositioning(() -> {
+                    GL11.glScalef(3.4f, 3.6f, 3.4f);
+                    GL11.glTranslatef(-0.1f, 0.455f, 1.2f);
+                })
+                .withCategory(AttachmentCategory.SCOPE)
+                .withCreativeTab(MWC.ATTACHMENTS_TAB)
+                .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
+                        M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard,
+                        M4Receiver, VLTORReceiver, AR57Receiver, KrissVectorReceiver,
+                        Vector556Handguard, Origin12Grip, HKS20Grip, G2ContenderBarrelLong,
+                        HK417Receiver, HK417ReceiverTan)
+                .withCrosshair("LP")
+                .withModel(new com.paneedah.mwc.models.TANGO6TScope(), "sigscope.png")
+                .withModel(new com.paneedah.mwc.models.JPUreticle(), "black.png")
+                .withFirstPersonModelPositioning(model -> {
+                    if (model instanceof TANGO6TScope) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else if (model instanceof JPUreticle) {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
 
+                }).withThirdPersonModelPositioning(model -> {
+                    if (model instanceof TANGO6TScope) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else if (model instanceof JPUreticle) {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withInventoryModelPositioning(model -> {
+                    if (model instanceof TANGO6TScope) {
+                        GL11.glTranslatef(-0.6F, -0.3F, 0.9F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.45F, 0.45F, 0.45f);
+                    } else if (model instanceof JPUreticle) {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                }).withEntityModelPositioning(model -> {
+                    if (model instanceof TANGO6TScope) {
+                        GL11.glTranslatef(0.1F, 0.2F, 0.4F);
+                        GL11.glRotatef(90F, 0f, 0f, 1f);
+                        GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    } else if (model instanceof JPUreticle) {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("TANGO6T1-6x24")
+                .withTextureName("Dummy.png").build(MWC.modContext);
     }
 }

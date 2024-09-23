@@ -121,7 +121,7 @@ public class Guns {
     public static Item M200Intervention;
     public static Item AS50;
     public static Item M82;
-//    public static Item NTW20;
+
     public static Item GL06;
     public static Item M79;
     public static Item M32MGL;

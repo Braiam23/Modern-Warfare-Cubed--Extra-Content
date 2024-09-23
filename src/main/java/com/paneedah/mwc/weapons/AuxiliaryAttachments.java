@@ -28,7 +28,6 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> AACRail;
     public static ItemAttachment<Weapon> M110Rail;
     public static ItemAttachment<Weapon> MagnumRail;
-    public static ItemAttachment<Weapon> M45A1slide;
     public static ItemAttachment<Weapon> M17_Slide;
     public static ItemAttachment<Weapon> Makarov_Slide;
     public static ItemAttachment<Weapon> P12_Slide;
@@ -154,8 +153,6 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> G11Action;
     public static ItemAttachment<Weapon> AUGAction;
     public static ItemAttachment<Weapon> JohnsonACTION;
-    public static ItemAttachment<Weapon> NTW20Barrel;
-    public static ItemAttachment<Weapon> NTW20Action;
     public static ItemAttachment<Weapon> JohnsonRifleACTION;
     public static ItemAttachment<Weapon> JohnsonRifleSight;
     public static ItemAttachment<Weapon> StripperClip;
@@ -171,9 +168,6 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> APC9Action;
     public static ItemAttachment<Weapon> ARX160Action;
     
-    //Magazines
-    public static ItemAttachment<Weapon> M41AMag;
-    
     //Projectiles
     public static ItemAttachment<Weapon> ShotgunShell;
     public static ItemAttachment<Weapon> ShotgunShellDouble;
@@ -187,7 +181,6 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> Chain;
     public static ItemAttachment<Weapon> ChainA;
     public static ItemAttachment<Weapon> ChainB;
-    
     public static void init(Object mod) {
         
         ChainB = new AttachmentBuilder<Weapon>()
@@ -447,15 +440,6 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mwc.models.M32Cartridge(), "gun.png")
                 .withRenderablePart()
                 .withName("M32Cartridge")
-                .withTextureName("Dummy.png").build(MWC.modContext);
-        
-        M41AMag = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA)
-                // .withCreativeTab(MWC.gunsTab)
-                .withModel(new com.paneedah.mwc.models.M41AMag(), "M41AMag.png")
-                .withName("M41AMag")
-                .withRenderablePart()
-        
                 .withTextureName("Dummy.png").build(MWC.modContext);
         
         MP43Edoublebarrel = new AttachmentBuilder<Weapon>()
@@ -744,24 +728,6 @@ public class AuxiliaryAttachments {
         
                 .withTextureName("Dummy.png").build(MWC.modContext);
         
-        NTW20Barrel = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA2)
-                // .withCreativeTab(MWC.gunsTab)
-                .withModel(new com.paneedah.mwc.models.NTW20Barrel(), "gun.png")
-                .withName("NTW20Barrel")
-                .withRenderablePart()
-        
-                .withTextureName("Dummy.png").build(MWC.modContext);
-        
-        NTW20Action = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA3)
-                // .withCreativeTab(MWC.gunsTab)
-                .withModel(new com.paneedah.mwc.models.NTW20ACTION(), "gun.png")
-                .withName("NTW20Action")
-                .withRenderablePart()
-        
-                .withTextureName("Dummy.png").build(MWC.modContext);
-        
         M60Hatch = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA3)
                 // .withCreativeTab(MWC.gunsTab)
@@ -973,16 +939,6 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(MWC.gunsTab)
                 .withModel(new com.paneedah.mwc.models.M712action(), "m712.png")
                 .withName("M712action")
-                .withRenderablePart().withTextureName("Dummy.png")
-                .build(MWC.modContext);
-        
-        M45A1slide = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA)
-                // .withCreativeTab(MWC.gunsTab)
-                .withModel(new com.paneedah.mwc.models.Emp1911Slide(), "Emp1911.png")
-                .withModel(new com.paneedah.mwc.models.M1911frontsight(), "m1911frontsight")
-                .withModel(new com.paneedah.mwc.models.M1911rearsight(), "m1911rearsight")
-                .withName("M45A1slide")
                 .withRenderablePart().withTextureName("Dummy.png")
                 .build(MWC.modContext);
         

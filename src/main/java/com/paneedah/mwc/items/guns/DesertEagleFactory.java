@@ -1,14 +1,10 @@
 package com.paneedah.mwc.items.guns;
 
 import com.paneedah.mwc.MWC;
-import com.paneedah.mwc.models.Glock18C;
-import com.paneedah.mwc.models.Reflex2;
+import com.paneedah.mwc.models.*;
 import com.paneedah.mwc.proxies.CommonProxy;
-import com.paneedah.mwc.weapons.Attachments;
-import com.paneedah.mwc.weapons.Magazines;
-import com.paneedah.weaponlib.AttachmentCategory;
-import com.paneedah.weaponlib.Weapon;
-import com.paneedah.weaponlib.WeaponRenderer;
+import com.paneedah.mwc.weapons.*;
+import com.paneedah.weaponlib.*;
 import com.paneedah.weaponlib.animation.Transform;
 import com.paneedah.weaponlib.compatibility.RecoilParam;
 import com.paneedah.weaponlib.config.BalancePackManager.GunConfigurationGroup;
@@ -32,9 +28,6 @@ public class DesertEagleFactory implements GunFactory {
         .withMaxShots(1)
         .withShootSound("desert_eagle")
         .withSilencedShootSound("m9a1_silenced")
-        .withReloadSound("deagle_reload")
-        .withUnloadSound("pistol_unload")
-        .withInspectSound("inspection")
         .withDrawSound("handgun_draw")
         .withReloadingTime(50)
         .withCrosshair("gun")
@@ -82,23 +75,12 @@ public class DesertEagleFactory implements GunFactory {
         })
         .withCompatibleAttachment(Attachments.DesertEagleLongBody, (model) -> {
         })
-        .withCompatibleAttachment(Attachments.DesertEagleBodyGolden, (model) -> {
-        })
-        .withCompatibleAttachment(Attachments.DesertEagleSlideGolden, (model) -> {
-        })
-        .withCompatibleAttachment(Attachments.DesertEagleBodyBlack, (model) -> {
-        })
-        .withCompatibleAttachment(Attachments.DesertEagleSlideBlack, (model) -> {
-        })
+
         .withCompatibleAttachment(Attachments.Laser, (p, s) -> {
             GL11.glTranslatef(0.01F, -0.76F, -2.1F);
             GL11.glScaled(1.1F, 1.1F, 1.1F);
             GL11.glRotatef(-90F, 0f, 0f, -4f);
         })
-//        .withCompatibleAttachment(Attachments.Silencer9mm, (model) -> {
-//            GL11.glTranslatef(-0.22F, -1.18F, -4.2F);
-//            GL11.glScaled(1.3F, 1.3F, 1.3F);
-//        })
         .withCompatibleAttachment(Attachments.RMR, (player, stack) -> {
                 GL11.glTranslatef(-0.19F, -1.3F, -1.25F);
                 GL11.glScaled(0.46F, 0.46F, 0.46F);

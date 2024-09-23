@@ -458,15 +458,6 @@
       }
     ]
   },
-  "m500a2": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mwc:m500a2",
-       "stream": false
-      }
-    ]
-  },
   "load_shell": {
     "category": "master",
     "sounds": [
@@ -584,15 +575,6 @@
       }
     ]
   },
-  "sr3_vikhr": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mwc:sr3_vikhr",
-       "stream": false
-      }
-    ]
-  },
   "mp443": {
     "category": "master",
     "sounds": [
@@ -616,15 +598,6 @@
     "sounds": [
       {
        "name": "mwc:as50_silenced",
-       "stream": false
-      }
-    ]
-  },
-  "p10": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mwc:p10",
        "stream": false
       }
     ]
@@ -1367,15 +1340,6 @@
       }
     ]
   },
-  "har27": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mwc:har27",
-       "stream": false
-      }
-    ]
-  },
   "acr": {
     "category": "master",
     "sounds": [
@@ -1399,15 +1363,6 @@
     "sounds": [
       {
        "name": "mwc:sl8",
-       "stream": false
-      }
-    ]
-  },
-  "dl44": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mwc:dl44",
        "stream": false
       }
     ]
@@ -1799,24 +1754,6 @@
       }
     ]
   },
-  "ntw20": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mwc:ntw20",
-       "stream": false
-      }
-    ]
-  },
-  "ntw20_boltaction": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mwc:ntw20_boltaction",
-       "stream": false
-      }
-    ]
-  },
   "g11": {
     "category": "master",
     "sounds": [
@@ -1943,24 +1880,6 @@
       }
     ]
   },
-  "socom": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mwc:socom",
-       "stream": false
-      }
-    ]
-  },
-  "socom_draw": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mwc:socom_draw",
-       "stream": false
-      }
-    ]
-  },
   "m17": {
     "category": "master",
     "sounds": [
@@ -1984,15 +1903,6 @@
     "sounds": [
       {
        "name": "mwc:g95",
-       "stream": false
-      }
-    ]
-  },
-  "p12": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mwc:p12",
        "stream": false
       }
     ]
@@ -2114,15 +2024,6 @@
       }
     ]
   },
-  "c8_sfw": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mwc:c8_sfw",
-       "stream": false
-      }
-    ]
-  },
   "ax50_boltaction": {
     "category": "master",
     "sounds": [
@@ -2155,15 +2056,6 @@
     "sounds": [
       {
        "name": "mwc:m14dmr",
-       "stream": false
-      }
-    ]
-  },
-  "g36k": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mwc:g36k",
        "stream": false
       }
     ]
@@ -2213,15 +2105,6 @@
       }
     ]
   },
-  "akmvulcan": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mwc:akmvulcan",
-       "stream": false
-      }
-    ]
-  },
   "ssg08": {
     "category": "master",
     "sounds": [
@@ -2239,25 +2122,7 @@
        "stream": false
       }
     ]
-  },
-  "pgmhecateii": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mwc:pgmhecateii",
-       "stream": false
-      }
-    ]
-  },
-  "pgmhecateii_boltaction": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mwc:pgmhecateii_boltaction",
-       "stream": false
-      }
-    ]
-  },
+  }, 
   "osipr": {
     "category": "master",
     "sounds": [
