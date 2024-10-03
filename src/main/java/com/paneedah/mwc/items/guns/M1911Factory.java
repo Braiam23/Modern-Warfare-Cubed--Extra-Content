@@ -9,8 +9,6 @@ import com.paneedah.weaponlib.animation.Transform;
 import com.paneedah.weaponlib.animation.jim.BBLoader;
 import com.paneedah.weaponlib.compatibility.RecoilParam;
 import com.paneedah.weaponlib.config.BalancePackManager.GunConfigurationGroup;
-import com.paneedah.weaponlib.crafting.CraftingEntry;
-import com.paneedah.mwc.init.MWCItems;
 import com.paneedah.weaponlib.render.shells.ShellParticleSimulator.Shell.Type;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.Vec3d;
@@ -43,19 +41,16 @@ public class M1911Factory implements GunFactory {
                 .withInaccuracy(3)
                 .useNewSystem()
                 .withCreativeTab(MWC.WEAPONS_TAB)
-                .withModernRecipe( new
-                        CraftingEntry(com.paneedah.mwc.init.MWCItems.carbonComposite, 5), new
-                        CraftingEntry(MWCItems.gunmetalPlate, 4), new
-                        CraftingEntry(MWCItems.steelIngot, 3))
+
                 .withRecoilParam(new RecoilParam(
-                        45.0,
+                        80.0,
                         13.5,
-                        15.5,
+                        37.55,
                         0.425,
                         0.2125,
                         0.0,
                         0.0,
-                        1.1
+                        1.15
                 ))
                 .withScreenShaking(RenderableState.SHOOTING,
                         3f,
@@ -95,7 +90,7 @@ public class M1911Factory implements GunFactory {
                     GL11.glTranslatef(-0.31F, -1.3F, -5.1F);
                     GL11.glScaled(1.5F, 1.5F, 1.5F);
                 })
-                .withCompatibleAttachment(Attachments.Laser, (model) -> {
+                .withCompatibleAttachment(Attachments.Laser, (p, s) -> {
                     GL11.glTranslatef(-0.045F, -0.75F, -2.2F);
                     GL11.glScaled(1.2F, 1.2F, 1.2F);
                     GL11.glRotatef(-90F, 0f, 0f, -4f);

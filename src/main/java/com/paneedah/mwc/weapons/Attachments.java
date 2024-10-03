@@ -181,7 +181,6 @@ public class Attachments {
     public static ItemAttachment<Weapon> SIG556HandguardKA;
     public static ItemAttachment<Weapon> SIG556Grip;
     
-    public static ItemAttachment<Weapon> S710Handguard;
     
     public static ItemAttachment<Weapon> SIGMCXHandguard;
     public static ItemAttachment<Weapon> SIGMCXHandguardShort;
@@ -417,7 +416,6 @@ public class Attachments {
     
     public static ItemAttachment<Weapon> M110Grip;
     
-    public static ItemAttachment<Weapon> S710TricunGrip;
     public static ItemAttachment<Weapon> HeraArmsGrip;
     public static ItemAttachment<Weapon> MP5HOGUEGrip;
     public static ItemAttachment<Weapon> GlockHOGUEGrip;
@@ -445,8 +443,6 @@ public class Attachments {
     public static ItemAttachment<Weapon> Z10Receiver;
     
     public static ItemAttachment<Weapon> Beowulf50CalReceiver;
-    
-    public static ItemAttachment<Weapon> S710Receiver;
     
     public static ItemAttachment<Weapon> CZ805BrenReceiver;
     
@@ -2489,7 +2485,7 @@ public class Attachments {
 
         AUGA2handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
                 .withCreativeTab(MWC.ATTACHMENTS_TAB)
-                .withModel(new com.paneedah.mwc.models.AUGScopeRail(), "augscope.png")
+                .withModel(new com.paneedah.mwc.models.AUGScopeRail(), "aug.png")
                 .withModel(new com.paneedah.mwc.models.AKRail(), "akrail.png")
                 .withInventoryModelPositioning(model -> {
                     if (model instanceof com.paneedah.mwc.models.AUGScopeRail) {
@@ -7804,41 +7800,6 @@ public class Attachments {
                 .withName("Beowulf50CalReceiver").withTextureName("Dummy.png")
                 .build(MWC.modContext);
 
-        S710Receiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
-                .withCreativeTab(MWC.ATTACHMENTS_TAB)
-                .withModel(new com.paneedah.mwc.models.S710Tricun10mmReceiver(), "s710tricun.png")
-                .withInventoryModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.S710Tricun10mmReceiver) {
-                        GL11.glTranslatef(-0.6F, 0.3F, 0F);
-                        GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-190F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(0.9F, 0.9F, 0.9f);
-                    } else {
-                        GL11.glScalef(0f, 0f, 0f);
-                    }
-                }).withFirstPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.S710Tricun10mmReceiver) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.S710Tricun10mmReceiver) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("S710Receiver").withTextureName("Dummy.png")
-                .build(MWC.modContext);
-
         CZ805BrenReceiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
                 .withCreativeTab(MWC.ATTACHMENTS_TAB)
                 .withModel(new com.paneedah.mwc.models.CZ805BrenReceiver(), "CZ805Bren.png")
@@ -8558,40 +8519,6 @@ public class Attachments {
                 .withName("AR10SuperSASSHandguard").withTextureName("Dummy.png")
                 .build(MWC.modContext);
 
-        S710Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
-                .withCreativeTab(MWC.ATTACHMENTS_TAB)
-                .withModel(new com.paneedah.mwc.models.S710TricunHandguard(), "s710tricun.png")
-                .withInventoryModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.S710TricunHandguard) {
-                        GL11.glTranslatef(-0.6F, 0.3F, -1.5F);
-                        GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-190F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(0.8F, 0.8F, 0.8f);
-                    } else {
-                        GL11.glScalef(0f, 0f, 0f);
-                    }
-                }).withFirstPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.S710TricunHandguard) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.S710TricunHandguard) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("S710Handguard").withTextureName("Dummy.png")
-                .build(MWC.modContext);
         SIGMCXHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(MWC.ATTACHMENTS_TAB)
                 .withModel(new com.paneedah.mwc.models.SIGMCXHandguard(), "sigmcx.png")
@@ -9127,41 +9054,6 @@ public class Attachments {
                     }
                 })
                 .withName("M110Grip").withTextureName("Dummy.png")
-                .build(MWC.modContext);
-
-        S710TricunGrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
-                .withCreativeTab(MWC.ATTACHMENTS_TAB)
-                .withModel(new com.paneedah.mwc.models.S710TricunGrip(), "S710Tricun.png")
-                .withInventoryModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.S710TricunGrip) {
-                        GL11.glTranslatef(-0.6F, -0.6F, 0.4F);
-                        GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-190F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(0.9F, 0.9F, 0.9f);
-                    } else {
-                        GL11.glScalef(0f, 0f, 0f);
-                    }
-                }).withFirstPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.S710TricunGrip) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.S710TricunGrip) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("S710TricunGrip").withTextureName("Dummy.png")
                 .build(MWC.modContext);
 
         K2C1Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -12594,7 +12486,7 @@ public class Attachments {
                         Vector556Handguard, M1CarbineScoutHandguard, Origin12Grip, HKS20Grip,
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack, M14TriRailCover,
                         M14TriRailCover, Mk14TanBody, Mk14SnowBody, Mk14BlackBody, SSG08Chassis, SA58DustCover,
-                        M16A1ScopeMount, UMP45Receiver, UMP9Receiver, G2ContenderBarrelLong, S710Receiver,
+                        M16A1ScopeMount, UMP45Receiver, UMP9Receiver, G2ContenderBarrelLong,
                         Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver, HK416Receiver,
                         M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
@@ -12662,7 +12554,7 @@ public class Attachments {
                         Vector556Handguard, DesertEagleSlide, M1CarbineScoutHandguard, Origin12Grip, HKS20Grip,
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack,
                         M14TriRailCover, Mk14TanBody, Mk14SnowBody, Mk14BlackBody, SSG08Chassis, SA58DustCover,
-                        M16A1ScopeMount, UMP45Receiver, UMP9Receiver, G2ContenderBarrelLong, S710Receiver,
+                        M16A1ScopeMount, UMP45Receiver, UMP9Receiver, G2ContenderBarrelLong,
                         Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver, HK416Receiver,
                         M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
@@ -12737,7 +12629,7 @@ public class Attachments {
                         Vector556Handguard, M1CarbineScoutHandguard, Origin12Grip, HKS20Grip,
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack, FABDefenseMount,
                         M14TriRailCover, Mk14TanBody, Mk14SnowBody, Mk14BlackBody, SSG08Chassis, SA58DustCover,
-                        M16A1ScopeMount, UMP45Receiver, UMP9Receiver, G2ContenderBarrelLong, S710Receiver,
+                        M16A1ScopeMount, UMP45Receiver, UMP9Receiver, G2ContenderBarrelLong,
                         Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver, HK416Receiver,
                         M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
@@ -12809,7 +12701,7 @@ public class Attachments {
                         Vector556Handguard, M1CarbineScoutHandguard,
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack, M14Rail, SSG08Chassis,
                         SA58DustCover, M16A1ScopeMount, UMP45Receiver, UMP9Receiver, G2ContenderBarrelLong,
-                        S710Receiver, Beowulf50CalReceiver, FamasF1ScopeMount,
+                        Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver,
                         HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
                         Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, Origin12Grip,
@@ -12894,7 +12786,7 @@ public class Attachments {
                         Vector556Handguard, M1CarbineScoutHandguard, Origin12Grip, HKS20Grip,
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack, M14Rail,
                         SSG08Chassis, SA58DustCover, M16A1ScopeMount, UMP45Receiver, UMP9Receiver,
-                        G2ContenderBarrelLong, S710Receiver, Beowulf50CalReceiver, FamasF1ScopeMount,
+                        G2ContenderBarrelLong, Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver,
                         HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
                         Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock,
@@ -12965,7 +12857,7 @@ public class Attachments {
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack,
                         M14TriRailCover, Mk14TanBody, Mk14SnowBody, Mk14BlackBody, SSG08Chassis,
                         SA58DustCover, M16A1ScopeMount, UMP45Receiver, UMP9Receiver,
-                        G2ContenderBarrelLong, S710Receiver, Beowulf50CalReceiver, FamasF1ScopeMount,
+                        G2ContenderBarrelLong, Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver,
                         HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
                         Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock,
@@ -13036,7 +12928,7 @@ public class Attachments {
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack,
                         M14TriRailCover, Mk14TanBody, Mk14SnowBody, Mk14BlackBody, SSG08Chassis,
                         SA58DustCover, M16A1ScopeMount, UMP45Receiver, UMP9Receiver,
-                        G2ContenderBarrelLong, S710Receiver, Beowulf50CalReceiver, FamasF1ScopeMount,
+                        G2ContenderBarrelLong, Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver,
                         HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
                         Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock,
@@ -13107,7 +12999,7 @@ public class Attachments {
                         Vector556Handguard, M1CarbineScoutHandguard, Origin12Grip, HKS20Grip,
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack, M14Rail,
                         SSG08Chassis, SA58DustCover, M16A1ScopeMount, UMP45Receiver, UMP9Receiver,
-                        G2ContenderBarrelLong, S710Receiver, Beowulf50CalReceiver, FamasF1ScopeMount,
+                        G2ContenderBarrelLong, Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver,
                         HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
                         Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock,
@@ -13183,7 +13075,7 @@ public class Attachments {
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack,
                         M14TriRailCover, Mk14TanBody, Mk14SnowBody, Mk14BlackBody,
                         SSG08Chassis, SA58DustCover, M16A1ScopeMount, UMP45Receiver, UMP9Receiver,
-                        G2ContenderBarrelLong, S710Receiver, Beowulf50CalReceiver, FamasF1ScopeMount,
+                        G2ContenderBarrelLong, Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver,
                         HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
                         Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock,
@@ -13253,7 +13145,7 @@ public class Attachments {
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack,
                         M14TriRailCover, Mk14TanBody, Mk14SnowBody, Mk14BlackBody, SSG08Chassis,
                         SA58DustCover, M16A1ScopeMount, UMP45Receiver, UMP9Receiver,
-                        G2ContenderBarrelLong, S710Receiver, Beowulf50CalReceiver, FamasF1ScopeMount,
+                        G2ContenderBarrelLong, Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver,
                         HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
                         Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock,
@@ -13323,7 +13215,7 @@ public class Attachments {
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack,
                         M14TriRailCover, Mk14TanBody, Mk14SnowBody, Mk14BlackBody, SSG08Chassis,
                         SA58DustCover, M16A1ScopeMount, UMP45Receiver, UMP9Receiver,
-                        G2ContenderBarrelLong, S710Receiver, Beowulf50CalReceiver, FamasF1ScopeMount,
+                        G2ContenderBarrelLong, Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver,
                         HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
                         Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock,
@@ -13394,7 +13286,7 @@ public class Attachments {
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack,
                         M14TriRailCover, Mk14TanBody, Mk14SnowBody, Mk14BlackBody, SSG08Chassis,
                         SA58DustCover, M16A1ScopeMount, UMP45Receiver, UMP9Receiver,
-                        G2ContenderBarrelLong, S710Receiver, Beowulf50CalReceiver, FamasF1ScopeMount,
+                        G2ContenderBarrelLong, Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver,
                         HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
                         Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock,
@@ -13527,7 +13419,7 @@ public class Attachments {
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack,
                         M14TriRailCover, Mk14TanBody, Mk14SnowBody, Mk14BlackBody, SSG08Chassis,
                         SA58DustCover, M16A1ScopeMount, UMP45Receiver, UMP9Receiver,
-                        G2ContenderBarrelLong, S710Receiver, Beowulf50CalReceiver, FamasF1ScopeMount,
+                        G2ContenderBarrelLong, Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver,
                         HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
                         Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock,
@@ -13597,7 +13489,7 @@ public class Attachments {
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack,
                         M14TriRailCover, Mk14TanBody, Mk14SnowBody, Mk14BlackBody,
                         SSG08Chassis, SA58DustCover, M16A1ScopeMount, UMP45Receiver,
-                        UMP9Receiver, G2ContenderBarrelLong, S710Receiver, Beowulf50CalReceiver, FamasF1ScopeMount,
+                        UMP9Receiver, G2ContenderBarrelLong, Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver,
                         HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
                         Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock,
@@ -13766,7 +13658,7 @@ public class Attachments {
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, Kar98Krail,
                         M4Receiver, VLTORReceiver, AR57Receiver,
                         HoneyBadgerKnightsReceiver, HoneyBadgerKnightsReceiverBlack, M14Rail,
-                        SSG08Chassis, SA58DustCover, M16A1ScopeMount, G2ContenderBarrelLong, S710Receiver,
+                        SSG08Chassis, SA58DustCover, M16A1ScopeMount, G2ContenderBarrelLong,
                         Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, MIMP5TRRail, MIMP5MRail,
                         CZ805BrenReceiver, HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
@@ -13842,7 +13734,7 @@ public class Attachments {
                         MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard,
                         Attachments.EF88Handguard, KrissVectorReceiver,
                         Vector556Handguard, M1CarbineScoutHandguard, M14Rail, SSG08Chassis, SA58DustCover,
-                        M16A1ScopeMount, UMP45Receiver, UMP9Receiver, G2ContenderBarrelLong, S710Receiver,
+                        M16A1ScopeMount, UMP45Receiver, UMP9Receiver, G2ContenderBarrelLong,
                         Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, CZ805BrenReceiver, HK416Receiver, M110Receiver, ScarLReceiver,
                         Remington700Chassis, Remington700APACChassis,
@@ -14051,6 +13943,7 @@ public class Attachments {
                 .build(MWC.modContext);
 
         AUGscope = new ItemScope.Builder()
+		        .withSniperReticle(Reticles.RETICLE_AUG)
                 .withOpticalZoom()
                 .withZoomRange(0.22f, 0.02f)
                 .withViewfinderPositioning(() -> {
@@ -14060,7 +13953,6 @@ public class Attachments {
                 .withCreativeTab(MWC.ATTACHMENTS_TAB)
                 .withCrosshair("HP")
                 .withModel(new com.paneedah.mwc.models.AUGScope_scope(), "augscope.png")
-                .withModel(new com.paneedah.mwc.models.JPUreticle(), "black.png")
                 .withModel(new com.paneedah.mwc.models.AUGScope(), "aug.png")
                 .withRequiredAttachments(AUGA1handguard)
                 .withFirstPersonModelPositioning(model -> {
@@ -14068,8 +13960,6 @@ public class Attachments {
                         GL11.glTranslatef(0.1F, -0.8F, 0.4F);
                         GL11.glRotatef(30F, 0f, 1f, 0f);
                         GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    } else if (model instanceof com.paneedah.mwc.models.JPUreticle) {
-                        GL11.glScaled(0F, 0F, 0F);
                     } else if (model instanceof com.paneedah.mwc.models.AUGScope) {
                         GL11.glScaled(0F, 0F, 0F);
                     }
@@ -14080,8 +13970,6 @@ public class Attachments {
                         GL11.glRotatef(-50F, 0f, 1f, 0f);
                         GL11.glRotatef(80F, 1f, 0f, 0f);
                         GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else if (model instanceof com.paneedah.mwc.models.JPUreticle) {
-                        GL11.glScaled(0F, 0F, 0F);
                     } else if (model instanceof com.paneedah.mwc.models.AUGScope) {
                         GL11.glScaled(0F, 0F, 0F);
                     }
@@ -14092,8 +13980,6 @@ public class Attachments {
                         GL11.glRotatef(-190F, 0f, 1f, 0f);
                         GL11.glRotatef(0F, 0f, 0f, 1f);
                         GL11.glScaled(0.65F, 0.65F, 0.65f);
-                    } else if (model instanceof com.paneedah.mwc.models.JPUreticle) {
-                        GL11.glScaled(0F, 0F, 0F);
                     } else if (model instanceof com.paneedah.mwc.models.AUGScope) {
                         GL11.glScaled(0F, 0F, 0F);
                     }
@@ -14102,8 +13988,6 @@ public class Attachments {
                         GL11.glTranslatef(0.1F, 0.2F, 0.4F);
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
-                    } else if (model instanceof com.paneedah.mwc.models.JPUreticle) {
-                        GL11.glScaled(0F, 0F, 0F);
                     } else if (model instanceof com.paneedah.mwc.models.AUGScope) {
                         GL11.glScaled(0F, 0F, 0F);
                     }
@@ -15285,7 +15169,7 @@ public class Attachments {
 
         Silencer45ACP = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
                 .withCreativeTab(MWC.ATTACHMENTS_TAB)
-                .withRequiredAttachments(KrissVectorReceiver, M1911Body)
+                .withRequiredAttachments(KrissVectorReceiver, M1911Body, M45A1CQBPBody)
                 .withModel(new com.paneedah.mwc.models.Suppressor45ACP(), "gun.png")
                 .withModernRecipe(
                         CraftingGroup.ATTACHMENT_NORMAL,
@@ -17146,7 +17030,6 @@ public class Attachments {
                 }).withInventoryModelPositioning(model -> {
                     if (model instanceof com.paneedah.mwc.models.USPMatchCompensator) {
                         GL11.glTranslatef(0.6F, 0.6F, -3.7F);
-                        // GL11.glRotatef(10F, 1f, 0f, 0f);
                         GL11.glRotatef(-180F, 0f, 1f, 0f);
                         GL11.glRotatef(0F, 0f, 0f, 1f);
                         GL11.glScaled(1.3F, 1.3F, 1.3f);
@@ -17174,7 +17057,7 @@ public class Attachments {
         SIGTANGO6T = new ItemScope.Builder()
                 .withSniperReticle(Reticles.RETICLE_1)
                 .withOpticalZoom()
-                .withZoomRange(0.10f, 0.04f)
+                .withZoomRange(0.5f, 0.04f)
                 .withViewfinderPositioning(() -> {
                     GL11.glScalef(3.4f, 3.6f, 3.4f);
                     GL11.glTranslatef(-0.1f, 0.455f, 1.2f);

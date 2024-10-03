@@ -11,7 +11,6 @@ import org.lwjgl.opengl.GL11;
 public class Magazines {
 
     public static ItemMagazine AUG9mmMag;
-    public static ItemMagazine S710TricunMag;
     public static ItemMagazine M4A1Mag;
     public static ItemMagazine NGSWRMag;
     public static ItemMagazine FamasF1Mag;
@@ -400,35 +399,6 @@ public class Magazines {
                     GL11.glRotatef(-6F, 1f, 0f, 0f);
                     GL11.glRotatef(-15F, 0f, 0f, 1f);
                     GL11.glScaled(1.1F, 1.1F, 1.1f);
-                })
-                .withMaxStackSize(6)
-                .withCrafting(CraftingComplexity.MEDIUM,
-                          MWCItems.steelIngot,
-                          MWCItems.gunmetalIngot)
-                .withTextureName("Dummy.png").build(MWC.modContext, ItemMagazine.class);
-        
-        Magazines.S710TricunMag = new ItemMagazine.Builder()
-        		.withCapacity(30)
-        		.withCompatibleBullet(Bullets.Bullet10mm)
-        		.withName("S710TricunMag")
-                .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
-                .withModel(new com.paneedah.mwc.models.S710TricunMag(), "S710Tricun.png")
-                .withRequiredAttachments(Attachments.S710Receiver)
-                .withFirstPersonPositioning(() -> {
-                    GL11.glTranslatef(0.1F, -0.3F, 0.4F);
-                    GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.7F, 0.7F, 0.7F);
-                }).withThirdPersonPositioning(() -> {
-                    GL11.glTranslatef(-0.3F, 0.5F, 0.1F);
-                    GL11.glRotatef(-50F, 0f, 1f, 0f);
-                    GL11.glRotatef(10F, 1f, 0f, 0f);
-                    GL11.glScaled(0.7F, 0.7F, 0.7F);
-                }).withInventoryPositioning(() -> {
-                    GL11.glTranslatef(0.3F, 0.6F, -1.6F);
-                    GL11.glRotatef(-150F, 0f, 1f, 0f);
-                    GL11.glRotatef(-6F, 1f, 0f, 0f);
-                    GL11.glRotatef(-15F, 0f, 0f, 1f);
-                    GL11.glScaled(0.7F, 0.7F, 0.7f);
                 })
                 .withMaxStackSize(6)
                 .withCrafting(CraftingComplexity.MEDIUM,
@@ -1704,7 +1674,7 @@ public class Magazines {
         
         Magazines.AS50Mag = new ItemMagazine.Builder().withCapacity(10).withCompatibleBullet(Bullets.Bullet50BMG).withName("AS50Mag_2")
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
-                .withModel(new com.paneedah.mwc.models.AS50mag(), "M4A1Mag.png")
+                .withModel(new com.paneedah.mwc.models.AS50mag(), "as50.png")
 
                 .withFirstPersonPositioning(() -> {
                     GL11.glTranslatef(0.1F, -0.3F, 0.4F);

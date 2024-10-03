@@ -18,8 +18,6 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> SIGMCXAction;
     public static ItemAttachment<Weapon> M110EjectorAction;
     public static ItemAttachment<Weapon> BeowulfAction;
-    public static ItemAttachment<Weapon> S710TricunActionPully;
-    public static ItemAttachment<Weapon> S710TricunActionEjector;
     public static ItemAttachment<Weapon> P90Action;
     public static ItemAttachment<Weapon> M110Action;
     public static ItemAttachment<Weapon> M4Rail;
@@ -1080,7 +1078,6 @@ public class AuxiliaryAttachments {
         
         AS50Action = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA)
-                // .withCreativeTab(MWC.gunsTab)
                 .withModel(new AS50action(), "as50.png")
                 .withName("AS50Action")
                 .withRenderablePart().withTextureName("Dummy.png")
@@ -1361,16 +1358,6 @@ public class AuxiliaryAttachments {
         BeowulfAction = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA)
                 .withModel(new com.paneedah.mwc.models.Beowulf50CalAction(), "beowulf50cal.png")
                 .withName("BeowulfAction").withRenderablePart()
-                .withTextureName("Dummy.png").build(MWC.modContext);
-        
-        S710TricunActionPully = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
-                .withModel(new com.paneedah.mwc.models.S710TricunActionPully(), "s710tricun.png")
-                .withName("S710TricunActionPully").withRenderablePart()
-                .withTextureName("Dummy.png").build(MWC.modContext);
-        
-        S710TricunActionEjector = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA3)
-                .withModel(new com.paneedah.mwc.models.S710TricunActionEjector(), "s710tricun.png")
-                .withName("S710TricunActionEjector").withRenderablePart()
                 .withTextureName("Dummy.png").build(MWC.modContext);
         
         K2C1Action = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)

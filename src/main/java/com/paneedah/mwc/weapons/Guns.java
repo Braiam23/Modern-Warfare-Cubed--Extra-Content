@@ -46,7 +46,6 @@ public class Guns {
     public static Item MAC10;
     public static Item ScorpionEVO3A1;
     public static Item APC9;
-    public static Item S710Tricun;
     public static Item ScarL;
     public static Item ScarH;
     public static Item FamasF1;
@@ -251,7 +250,6 @@ public class Guns {
         Uzi = new UziFactory().createGun(proxy);
 
         //SMG1
-        S710Tricun = new S710TricunFactory().createGun(proxy);
         APC9 = new APC9Factory().createGun(proxy);
         Kedr = new KedrFactory().createGun(proxy);
         MP40 = new MP40Factory().createGun(proxy);
