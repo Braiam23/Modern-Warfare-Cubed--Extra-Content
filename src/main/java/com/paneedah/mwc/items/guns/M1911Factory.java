@@ -20,7 +20,7 @@ public class M1911Factory implements GunFactory {
         return new Weapon.Builder()
 
                 .withName("m1911")
-                .withFireRate(0.3f)
+                .withFireRate(0.15f)
                 .withRecoil(3f)
                 .withZoom(0.9f)
                 .withConfigGroup(GunConfigurationGroup.SIDEARM)
@@ -152,12 +152,12 @@ public class M1911Factory implements GunFactory {
 
                         .withFirstPersonCustomPositioning(Attachments.M1911Slide.getRenderablePart(), (renderContext) -> {
                             if (renderContext.getWeaponInstance().getAmmo() == 0) {
-                                GL11.glTranslatef(0F, 0F, 0.65F);
+                                GL11.glTranslatef(0F, 0F, 0.6F);
                             }
                         })
                         .withFirstPersonCustomPositioning(Attachments.M45A1CQBPSlide.getRenderablePart(), (renderContext) -> {
                             if (renderContext.getWeaponInstance().getAmmo() == 0) {
-                                GL11.glTranslatef(0F, 0F, 0.65F);
+                                GL11.glTranslatef(0F, 0F, 0.6F);
                             }
                         })
 
