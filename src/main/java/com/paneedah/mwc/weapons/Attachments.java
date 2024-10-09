@@ -477,7 +477,6 @@ public class Attachments {
     public static ItemAttachment<Weapon> SamuraiEdgeMount;
     public static ItemAttachment<Weapon> DesertEagleBody;
     public static ItemAttachment<Weapon> DesertEagleSlide;
-    public static ItemAttachment<Weapon> DesertEagleLongBody;
     public static ItemAttachment<Weapon> Glock19Body;
 //    public static ItemAttachment<Weapon> Glock18CBody;
     public static ItemAttachment<Weapon> Glock19XBody;
@@ -5373,42 +5372,6 @@ public class Attachments {
                 .withRenderablePart().withTextureName("Dummy.png")
                 .build(MWC.modContext);
 
-        DesertEagleLongBody = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.BACKGRIP)
-                .withCreativeTab(MWC.ATTACHMENTS_TAB)
-                .withModel(new com.paneedah.mwc.models.DesertEagleLong(), "Deagle.png")
-                .withInventoryModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.DesertEagleLong) {
-                        GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
-                        GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-190F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(0.9F, 0.9F, 0.9f);
-                    } else {
-                        GL11.glScalef(0f, 0f, 0f);
-                    }
-                }).withFirstPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.DesertEagleLong) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning(model -> {
-                    if (model instanceof com.paneedah.mwc.models.DesertEagleLong) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("DesertEagleLongBody")
-                .withRenderablePart().withTextureName("Dummy.png")
-                .build(MWC.modContext);
 
         Glock19Body = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.BACKGRIP)
