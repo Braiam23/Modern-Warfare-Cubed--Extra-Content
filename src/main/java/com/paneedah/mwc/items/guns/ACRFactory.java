@@ -181,7 +181,6 @@ public class ACRFactory implements GunFactory {
             GL11.glTranslatef(0F, 0.08F, -0.15F);
         })
 
-        // Compatible ACR attachment NightRaider
         .withCompatibleAttachment(Attachments.NightRaider, (player, stack) -> {
             GL11.glTranslatef(-0.22F, -1.6F, -2F);
             GL11.glScaled(0.82F, 0.82F, 0.82F);

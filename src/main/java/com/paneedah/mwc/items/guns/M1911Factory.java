@@ -20,12 +20,12 @@ public class M1911Factory implements GunFactory {
         return new Weapon.Builder()
 
                 .withName("m1911")
-                .withFireRate(0.15f)
+                .withFireRate(0.26f)
                 .withRecoil(3f)
                 .withZoom(0.9f)
                 .withConfigGroup(GunConfigurationGroup.SIDEARM)
                 .withShellType(Type.PISTOL)
-                .withMuzzlePosition(new Vec3d(-.15, -0.8, -3.4))
+                .withMuzzlePosition(new Vec3d(-0.15, -0.8, -3.4))
                 .withMaxShots(1)
                 .withShootSound("colt_m45a1")
                 .withSilencedShootSound("colt_m45a1_silenced")
@@ -44,8 +44,8 @@ public class M1911Factory implements GunFactory {
 
                 .withRecoilParam(new RecoilParam(
                         80.0,
-                        13.5,
-                        37.55,
+                        16.5,
+                        37.5,
                         0.425,
                         0.2125,
                         0.0,

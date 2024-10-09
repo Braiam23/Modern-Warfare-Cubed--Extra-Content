@@ -1,15 +1,10 @@
 package com.paneedah.mwc.items.guns;
 
 import com.paneedah.mwc.MWC;
-import com.paneedah.mwc.models.Reflex2;
-import com.paneedah.mwc.models.TaurusRagingHunter;
+import com.paneedah.mwc.models.*;
 import com.paneedah.mwc.proxies.CommonProxy;
-import com.paneedah.mwc.weapons.Attachments;
-import com.paneedah.mwc.weapons.AuxiliaryAttachments;
-import com.paneedah.mwc.weapons.Bullets;
-import com.paneedah.weaponlib.AttachmentCategory;
-import com.paneedah.weaponlib.Weapon;
-import com.paneedah.weaponlib.WeaponRenderer;
+import com.paneedah.mwc.weapons.*;
+import com.paneedah.weaponlib.*;
 import com.paneedah.weaponlib.animation.Transform;
 import com.paneedah.weaponlib.compatibility.RecoilParam;
 import com.paneedah.weaponlib.config.BalancePackManager.GunConfigurationGroup;
@@ -29,7 +24,6 @@ public class TaurusRagingHunterFactory implements GunFactory {
         .withConfigGroup(GunConfigurationGroup.REVOLVER)
         .withMaxShots(1)
         .withShootSound("magnum44")
-//		.withIteratedLoad()
         .withReloadSound("revolver_reload")
         .withReloadIterationSound("revolver_insert_bullet")
         .withAllReloadIterationsCompletedSound("revolver_load_complete")
@@ -70,20 +64,10 @@ public class TaurusRagingHunterFactory implements GunFactory {
             GL11.glScaled(0F, 0F, 0F);
         })
         .withCompatibleAttachment(AuxiliaryAttachments.MagnumChamber, true, (model) -> {
-//          GL11.glTranslatef(-0.35f, -0.1f, 0f);
-//            GL11.glRotatef(25F, 0f, 0f, 1f);
         })
         .withCompatibleAttachment(AuxiliaryAttachments.RevolverSpeedLoader, true, (model) -> {
-//			GL11.glTranslatef(-0f, -0.1f, 0.7f);
-//			GL11.glRotatef(30F, 0f, 1f, 0f);
-//            GL11.glRotatef(25F, 0f, 0f, 1f);
-//            GL11.glRotatef(-10F, 1f, 0f, 0f);
             })
 		.withCompatibleAttachment(AuxiliaryAttachments.RevolverSpeedLoaderBullets, true, (model) -> {
-//			GL11.glTranslatef(0f, 0f, 0.001f);
-			
-//			GL11.glTranslatef(-0.35f, -0.1f, 0.4f);
-//            GL11.glRotatef(25F, 0f, 0f, 1f);
 		})
 //        .withCompatibleAttachment(Attachments.DanWessonLaser, (p, s) -> {
 //            GL11.glTranslatef(0.01F, -1.45F, -2.6F);
@@ -112,12 +96,8 @@ public class TaurusRagingHunterFactory implements GunFactory {
         .withRenderer(new WeaponRenderer.Builder()
     
             .withModel(new TaurusRagingHunter())
-            //.withTextureName("XEagle")
-            //.withWeaponProximity(0.99F)
-            //.withYOffsetZoom(5F)
             .withEntityPositioning(itemStack -> {
                 GL11.glScaled(0.4F, 0.4F, 0.4F);
-                GL11.glRotatef(-90F, 0f, 0f, 4f);
             })
             .withInventoryPositioning(itemStack -> {
                 GL11.glScaled(0.35F, 0.35F, 0.35F);
@@ -169,16 +149,13 @@ public class TaurusRagingHunterFactory implements GunFactory {
                 GL11.glTranslatef(0.14f, 0.78f, -2.0f);
                 
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.RMR)) {
-                    //System.out.println("Position me for Holo");
                     GL11.glTranslatef(0f, 0.2f, 1f);
                 } 
                 
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.BijiaReflex)) {
-                    //System.out.println("Position me for Holo");
                     GL11.glTranslatef(0f, 0.32f, 1f);
                 } 
-                
-                // Everything else
+
                 else {
                 }
                 
