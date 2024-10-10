@@ -3,18 +3,12 @@ package com.paneedah.mwc.items.guns;
 import com.paneedah.mwc.MWC;
 import com.paneedah.mwc.models.*;
 import com.paneedah.mwc.proxies.CommonProxy;
-import com.paneedah.mwc.weapons.Attachments;
-import com.paneedah.mwc.weapons.AuxiliaryAttachments;
-import com.paneedah.mwc.weapons.Magazines;
-import com.paneedah.weaponlib.RenderableState;
-import com.paneedah.weaponlib.Weapon;
-import com.paneedah.weaponlib.WeaponRenderer;
+import com.paneedah.mwc.weapons.*;
+import com.paneedah.weaponlib.*;
 import com.paneedah.weaponlib.animation.Transition;
 import com.paneedah.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import net.minecraft.item.Item;
 import org.lwjgl.opengl.GL11;
-
-import java.util.Arrays;
 
 public class BrenMkIIFactory {
 
@@ -27,12 +21,8 @@ public class BrenMkIIFactory {
         .withZoom(0.9f)
         .withConfigGroup(GunConfigurationGroup.HEAVY)
         .withMaxShots(1, Integer.MAX_VALUE)
-        //.withMaxShots(5)
         .withShootSound("bren")
         .withSilencedShootSound("ak15_silenced")
-        .withReloadSound("ak15_reload")
-        .withUnloadSound("ak_unload")
-        .withInspectSound("inspection")
         .withDrawSound("ak_draw")
         .withReloadingTime(45)
         .withCrosshair("gun")
@@ -43,23 +33,12 @@ public class BrenMkIIFactory {
         .withFlashOffsetX(() -> 0.1f)
         .withFlashOffsetY(() -> 0.1f)
         .withCreativeTab(MWC.WEAPONS_TAB)
-        .withInformationProvider(stack -> Arrays.asList(
-        "Type: Light Machine Gun",
-        "Damage: 10", 
-        "Cartridge: 7.62x51mm",
-        "Fire Rate: SEMI, AUTO",
-        "Rate of Fire: 50/100",
-        "Magazines:",
-        "30rnd 7.62x51mm Bren Magazine"))
         
         .withScreenShaking(RenderableState.SHOOTING, 
-                2f, // x 
-                2f, // y
-                5f) // z
+                2f
+                2f,
+                5f)
         
-//        .withCompatibleAttachment(AuxiliaryAttachments.AKaction, true, (model) -> {
-////            GL11.glTranslatef(0f, 0f, 1f);
-//        })
         .withCompatibleAttachment(AuxiliaryAttachments.Extra, true, (model) -> {
             if(model instanceof AKMiron1) {
                 GL11.glTranslatef(0.125F, -1.8F, -0.5F);
@@ -113,9 +92,6 @@ public class BrenMkIIFactory {
         .withRenderer(new WeaponRenderer.Builder()
     
             .withModel(new BrenMkII())
-            //.withTextureName("AK47")
-            //.withWeaponProximity(0.99F)
-            //.withYOffsetZoom(5F)
             .withEntityPositioning(itemStack -> {
                 GL11.glScaled(0.35F, 0.35F, 0.35F);
                 GL11.glRotatef(-90F, 0f, 0f, 4f);
