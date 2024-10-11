@@ -289,7 +289,6 @@ public class MP7Factory {
             .withADSBeizer(new Vec3d(0.2, 1.7, -3))
             .withEntityPositioning(itemStack -> {
                 GL11.glScaled(0.35F, 0.35F, 0.35F);
-                GL11.glRotatef(-90F, 0f, 0f, 4f);
             })
             .withInventoryPositioning(itemStack -> {
                 GL11.glScaled(0.28F, 0.28F, 0.28F);
@@ -342,6 +341,7 @@ public class MP7Factory {
                 
 					if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MP7IronSightsStanding)) {
 						GL11.glTranslatef(0F, 0.175f, 0f);
+					} else {
 						
                     if (Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.NightRaider)) {
                         GL11.glTranslatef(0F, 0.15f, 0.8f);

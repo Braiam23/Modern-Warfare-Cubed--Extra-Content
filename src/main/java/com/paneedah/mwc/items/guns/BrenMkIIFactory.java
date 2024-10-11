@@ -35,7 +35,7 @@ public class BrenMkIIFactory {
         .withCreativeTab(MWC.WEAPONS_TAB)
         
         .withScreenShaking(RenderableState.SHOOTING, 
-                2f
+                2f,
                 2f,
                 5f)
         

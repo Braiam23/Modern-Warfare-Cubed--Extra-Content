@@ -170,7 +170,7 @@ public class DesertEagleFactory implements GunFactory {
             })
                 
             .withFirstPersonPositioningZooming((renderContext) -> {
-                GL11.glTranslatef(0.168f, -0.195f, -1.5f);
+                GL11.glTranslatef(0.168f, -0.205f, -1.5f);
 
             if (Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.RMR))
                     GL11.glTranslatef(-0.007f, 0.15f, 1f);
