@@ -171,7 +171,6 @@ public class M9A1Factory implements GunFactory {
             .withActionTransform(new Transform().withPosition(0, 0, 0.5))
             .withEntityPositioning(itemStack -> {
                 GL11.glScaled(0.4F, 0.4F, 0.4F);
-                GL11.glRotatef(-90F, 0f, 0f, 4f);
             })
             .withInventoryPositioning(itemStack -> {
                 GL11.glScaled(0.35F, 0.35F, 0.35F);

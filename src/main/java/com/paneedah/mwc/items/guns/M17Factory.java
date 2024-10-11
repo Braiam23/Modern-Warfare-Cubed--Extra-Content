@@ -4,13 +4,8 @@ import com.paneedah.mwc.MWC;
 import com.paneedah.mwc.init.MWCItems;
 import com.paneedah.mwc.models.*;
 import com.paneedah.mwc.proxies.CommonProxy;
-import com.paneedah.mwc.weapons.Attachments;
-import com.paneedah.mwc.weapons.AuxiliaryAttachments;
-import com.paneedah.mwc.weapons.Magazines;
-import com.paneedah.weaponlib.AttachmentCategory;
-import com.paneedah.weaponlib.RenderableState;
-import com.paneedah.weaponlib.Weapon;
-import com.paneedah.weaponlib.WeaponRenderer;
+import com.paneedah.mwc.weapons.*;
+import com.paneedah.weaponlib.*;
 import com.paneedah.weaponlib.animation.Transform;
 import com.paneedah.weaponlib.compatibility.RecoilParam;
 import com.paneedah.weaponlib.config.BalancePackManager.GunConfigurationGroup;
@@ -35,9 +30,6 @@ public class M17Factory implements GunFactory {
         .withMaxShots(1)
         .withShootSound("m17")
         .withSilencedShootSound("colt_m45a1_silenced")
-        .withReloadSound("m17_reload")
-        .withUnloadSound("m17_unload")
-        .withInspectSound("inspection")
         .withDrawSound("m17_draw")
         .withReloadingTime(50)
         .withCrosshair("gun")
@@ -71,9 +63,9 @@ public class M17Factory implements GunFactory {
         ))
         
         .withScreenShaking(RenderableState.SHOOTING, 
-                2.5f, // x 
-                0.1f, // y
-                1f) // z
+                2.5f, 
+                0.1f,
+                1f) 
         
         .withModernRecipe( new
         		CraftingEntry(MWCItems.carbonComposite, 7), new
@@ -93,7 +85,6 @@ public class M17Factory implements GunFactory {
         .withCompatibleAttachment(AuxiliaryAttachments.M17_Slide, true, (model) -> {
             if(model instanceof M17Slide) {
                 GL11.glScaled(1F, 1F, 1F);
-//                GL11.glTranslatef(0F, 0F, 0.5F);
             }
             else if(model instanceof M9A1rearsight) {
                 GL11.glTranslatef(-0.153F, -1.2F, -0.03F);
@@ -105,8 +96,6 @@ public class M17Factory implements GunFactory {
             }
         })
         .withCompatibleAttachment(Magazines.M17Mag, (model) -> {
-//            GL11.glRotatef(-5F, 1f, 0f, 0f);
-//            GL11.glTranslatef(0F, 0.8F, 0.2F);
         })
         
         .withCompatibleAttachment(Attachments.Laser, (p, s) -> {
@@ -135,9 +124,6 @@ public class M17Factory implements GunFactory {
                         AuxiliaryAttachments.M17_Slide)
             .withActionPiece(Attachments.RMR)
             .withActionTransform(new Transform().withPosition(0, 0, 0.5))
-            //.withTextureName("M9")
-            //.withWeaponProximity(0.99F)
-            //.withYOffsetZoom(5F)
             .withEntityPositioning(itemStack -> {
                 GL11.glScaled(0.4F, 0.4F, 0.4F);
                 GL11.glRotatef(-90F, 0f, 0f, 4f);
@@ -192,16 +178,13 @@ public class M17Factory implements GunFactory {
             })
             
             .withFirstPersonPositioningZooming((renderContext) -> {
-//                GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScaled(3F, 3F, 3F);
                 GL11.glTranslatef(0.14f, 0.7f, -2.3f);
                 
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.RMR)) {
-                    //System.out.println("Position me for Holo");
                     GL11.glTranslatef(0f, 0.23f, 0f);
                 } 
                 
-                // Everything else
                 else {
                 }
                 

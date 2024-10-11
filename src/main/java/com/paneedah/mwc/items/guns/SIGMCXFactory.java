@@ -582,57 +582,46 @@ public class SIGMCXFactory implements GunFactory {
 				GL11.glScalef(3.0f, 3.0f, 3.0f);
 				GL11.glTranslatef(0.14f, 1.36f, -0.3f);
 				
-				// Standard Iron Sight Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.TritiumRearSights)) {
                         GL11.glTranslatef(0F, -0f, 0f);
 				} 
 				
-				// Standard Iron Sight Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HK416RearSights)) {
                         GL11.glTranslatef(0F, 0.015f, 0f);
 				} 
 				
-				// Standard Iron Sight Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MicroReflex)) {
                         GL11.glTranslatef(0F, 0.0f, 0f);
 				} 
 				
-				// Standard Iron Sight Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.NightRaider)) {
                 	GL11.glTranslatef(0F, 0.00f, 0.2f);
                 } 
 				
-				// Standard Iron Sight Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.AKMIron)) {
                         GL11.glTranslatef(0F, 0f, 0f);
 				} 
 				
-				// ACOG Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                         GL11.glTranslatef(-0.01F, 0.02f, 0.3f);
 				} 
 				
-				// ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Specter)) {
                         GL11.glTranslatef(-0.003F, -0.025f, 0.4f);
                 } 
 
-				// HP Zoomw
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.LeupoldRailScope)) {
                         GL11.glTranslatef(0.001F, -0.0f, 0.2f);
 				} 
 				
-				// Reflex Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
                         GL11.glTranslatef(0F, 0.02f, 0.1f);
 				} 
 				
-				// Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.BijiaReflex)) {
                         GL11.glTranslatef(0F, -0.01f, 0f);
                 } 
 				
-				// Holo Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holographic)) {
                         GL11.glTranslatef(0F, 0.053f, 0f);
 				} 
