@@ -162,7 +162,7 @@ public class M1911Factory implements GunFactory {
                         })
 
                         .withFirstPersonPositioningZooming((renderContext) -> {
-                            GL11.glTranslatef(0.239F, -0.235F, -1.2F);
+                            GL11.glTranslatef(0.239F, -0.235F, -1.6F);
 
                             if (Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.M45A1CQBPSlide))
                                 GL11.glTranslatef(0.01f, 0.01f, 0f);

@@ -1063,7 +1063,7 @@ public class AuxiliaryAttachments {
         Saiga12action = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA2)
                 // .withCreativeTab(MWC.gunsTab)
-                .withModel(new com.paneedah.mwc.models.Saiga12action(), "gun.png").withName("Saiga12action")
+                .withModel(new com.paneedah.mwc.models.Saiga12action(), "saiga12.png").withName("Saiga12action")
                 .withRenderablePart().withTextureName("Dummy.png")
                 .build(MWC.modContext);
         

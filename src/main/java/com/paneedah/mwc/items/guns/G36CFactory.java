@@ -283,9 +283,8 @@ public class G36CFactory implements GunFactory {
                         .withActionPiece(AuxiliaryAttachments.G36CAction)
                         .withActionTransform(new Transform().withPosition(0, 0, 1))
                         .withEntityPositioning(itemStack -> {
-                            GL11.glScaled(0.5F, 0.5F, 0.5F);
+                            GL11.glScaled(0.35F, 0.35F, 0.35F);
                             GL11.glTranslatef(0, 0f, 3f);
-                            GL11.glRotatef(-90F, 0f, 0f, 4f);
                         })
                         .withInventoryPositioning(itemStack -> {
                             GL11.glScaled(0.35F, 0.35F, 0.35F);

@@ -100,7 +100,6 @@ public class HK_P12Factory implements GunFactory {
         .withCompatibleAttachment(AuxiliaryAttachments.P12_Slide, true, (model) -> {
             if(model instanceof USP45Slide) {
                 GL11.glScaled(1F, 1F, 1F);
-//                GL11.glTranslatef(0F, 0F, 0.5F);
             }
             else if(model instanceof P2000rearsight) {
                 GL11.glTranslatef(-0.153F, -1.185F, -0.03F);
@@ -167,7 +166,8 @@ public class HK_P12Factory implements GunFactory {
             		AuxiliaryAttachments.P12_Slide)
             .withActionTransform(new Transform().withPosition(0, 0, 0.5))
             .withEntityPositioning(itemStack -> {
-                GL11.glScaled(0.4F, 0.4F, 0.4F);
+                GL11.glScaled(0.35F, 0.35F, 0.35F);
+				GL11.glTranslatef(0, 0f, 3f);
             })
             .withInventoryPositioning(itemStack -> {
                 GL11.glScaled(0.35F, 0.35F, 0.35F);

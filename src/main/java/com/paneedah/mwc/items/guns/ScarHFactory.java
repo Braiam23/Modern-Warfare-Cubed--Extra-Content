@@ -326,7 +326,6 @@ public class ScarHFactory implements GunFactory {
         })
         .withCompatibleAttachment(Attachments.AngledGrip, (model) -> {
             GL11.glTranslatef(-0.2F, -0.14F, -3.2F);
-//            GL11.glRotatef(180F, 0f, 1f, 0f);
             GL11.glScaled(1.1F, 1F, 1F);
         })
         .withCompatibleAttachment(Attachments.JunoGrip, (model) -> {
@@ -362,7 +361,7 @@ public class ScarHFactory implements GunFactory {
             .withActionPiece(AuxiliaryAttachments.ScarHAction)
             .withActionTransform(new Transform().withPosition(0, 0, 1.3))
             .withEntityPositioning(itemStack -> {
-                GL11.glScaled(0.5F, 0.5F, 0.5F);
+                GL11.glScaled(0.35F, 0.35F, 0.35F);
                 GL11.glTranslatef(0, 0f, 3f);
             })
             .withInventoryPositioning(itemStack -> {

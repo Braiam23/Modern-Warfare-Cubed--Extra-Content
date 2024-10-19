@@ -537,6 +537,8 @@ public class Attachments {
     public static ItemAttachment<Weapon> F2000IronSights;
 
 	public static ItemAttachment<Weapon> SIGTANGO6T;
+	
+	public static ItemAttachment<Weapon> Saiga12Handguard;
 
     public static void init(Object mod) {
 
@@ -17075,5 +17077,44 @@ public class Attachments {
                 })
                 .withName("TANGO6T1-6x24")
                 .withTextureName("Dummy.png").build(MWC.modContext);
+				
+        Saiga12Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
+                .withCreativeTab(MWC.ATTACHMENTS_TAB)
+                .withModel(new com.paneedah.mwc.models.Saiga12Handguard(), "saiga12.png")
+                .withModernRecipe(
+                        CraftingGroup.ATTACHMENT_MODIFICATION,
+                        new CraftingEntry(MWCItems.gunmetalIngot, 3),
+                        new CraftingEntry(Blocks.PLANKS, 2))
+                .withInventoryModelPositioning(model -> {
+                    if (model instanceof com.paneedah.mwc.models.Saiga12Handguard) {
+                        GL11.glTranslatef(-0.6F, 0.4F, -2F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning(model -> {
+                    if (model instanceof com.paneedah.mwc.models.Saiga12Handguard) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning(model -> {
+                    if (model instanceof com.paneedah.mwc.models.Saiga12Handguard) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("Saiga12Handguard").withTextureName("Dummy.png")
+                .build(MWC.modContext);
     }
 }

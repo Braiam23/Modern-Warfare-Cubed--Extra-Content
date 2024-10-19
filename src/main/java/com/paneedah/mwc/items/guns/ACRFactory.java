@@ -528,6 +528,7 @@ public class ACRFactory implements GunFactory {
 
             .withEntityPositioning(itemStack -> {
                 GL11.glScaled(0.35F, 0.35F, 0.35F);
+				GL11.glTranslatef(0, 0f, 3f);
             })
             .withInventoryPositioning(itemStack -> {
                 GL11.glScaled(0.4F, 0.4F, 0.4F);
@@ -660,7 +661,7 @@ public class ACRFactory implements GunFactory {
                     GL11.glTranslatef(-0.001F, 0.08f, 0.9f);
                 }
                 else if (Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.SIGTANGO6T)) {
-                    GL11.glTranslatef(0.001F, 0.025f, 0.1f);
+                    GL11.glTranslatef(0.001F, 0.055f, 0.1f);
                 }
                 else if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.AKMIron)) {
                     GL11.glTranslatef(0F, 0.039f, 0.2f);

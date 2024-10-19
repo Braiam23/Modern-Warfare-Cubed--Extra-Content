@@ -91,12 +91,8 @@ public class M110Factory implements GunFactory {
            }
          })
          .withCompatibleAttachment(Attachments.M110Grip, true, (model) -> {
-//             GL11.glTranslatef(0.01f, -0.19f, -0.4f);
-//             GL11.glScaled(0F, 0F, 0F);
          })
          .withCompatibleAttachment(Attachments.M110Stock, true, (model) -> {
-//           GL11.glTranslatef(0.01f, -0.19f, -0.4f);
-//           GL11.glScaled(0F, 0F, 0F);
        })
          .withCompatibleAttachment(Attachments.M110Receiver, true, (model) -> {
              if(model instanceof M110Receiver) {
@@ -359,7 +355,7 @@ public class M110Factory implements GunFactory {
             .withModel(new M110())
             .withADSBeizer(new Vec3d(0.2, 1.7, 0.5))
             .withEntityPositioning(itemStack -> {
-                GL11.glScaled(0.5F, 0.5F, 0.5F);
+                GL11.glScaled(0.35F, 0.35F, 0.35F);
                 GL11.glTranslatef(0, 0f, 3f);
             })
             .withInventoryPositioning(itemStack -> {

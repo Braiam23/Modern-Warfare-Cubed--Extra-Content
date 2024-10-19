@@ -49,7 +49,7 @@ public class NGSWRFactory implements GunFactory {
 				// "Stock Length"
 				50.0,
 				// Recovery rate from initial shot
-				0.4,
+				0.56,
 				// Recovery rate @ "stock"
 				0.3125,
 				// Recoil rotation (Y)
@@ -121,16 +121,16 @@ public class NGSWRFactory implements GunFactory {
             GL11.glTranslatef(0f, -0.075f, 0f);
           })
         .withCompatibleAttachment(Attachments.MagpulCTRStockTan, (model) -> {
-        	GL11.glTranslatef(-0.02f, -0.47f, 0.5f);
-            GL11.glScaled(0.85F, 0.85F, 0.85F);
+        	GL11.glTranslatef(-0.02f, -0.37f, 0.45f);
+            GL11.glScaled(1F, 1F, 1F);
         })
         .withCompatibleAttachment(Attachments.MilSpecStockTan, (model) -> {
-        	GL11.glTranslatef(-0.02f, -0.47f, 0.5f);
-            GL11.glScaled(0.85F, 0.85F, 0.85F);
+        	GL11.glTranslatef(-0.02f, -0.37f, 0.45f);
+            GL11.glScaled(1F, 1F, 1F);
         })
         .withCompatibleAttachment(Attachments.HK416StockTan, true, (model) -> {
-        	GL11.glTranslatef(-0.02f, -0.47f, 0.5f);
-            GL11.glScaled(0.85F, 0.85F, 0.85F);
+        	GL11.glTranslatef(-0.02f, -0.37f, 0.45f);
+			GL11.glScaled(1F, 1F, 1F);
         })
         .withCompatibleAttachment(Magazines.NGSWRMag, (model) -> {
         })
@@ -367,7 +367,7 @@ public class NGSWRFactory implements GunFactory {
 			
 			.withModel(new NGSWR())
 			.withEntityPositioning(itemStack -> {
-				GL11.glScaled(0.5F, 0.5F, 0.5F);
+				GL11.glScaled(0.35F, 0.35F, 0.35F);
 				GL11.glTranslatef(0, 0f, 3f);
 			})
 			.withInventoryPositioning(itemStack -> {

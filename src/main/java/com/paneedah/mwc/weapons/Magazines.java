@@ -1082,10 +1082,10 @@ public class Magazines {
                 .withTextureName("Dummy.png")
                 .build(MWC.modContext, ItemMagazine.class);
         
-        Magazines.SaigaMag = new ItemMagazine.Builder().withCapacity(5).withCompatibleBullet(Bullets.Shotgun12Guage).withName("SaigaMag_2")
+        Magazines.SaigaMag = new ItemMagazine.Builder().withCapacity(6).withCompatibleBullet(Bullets.Shotgun12Guage).withName("SaigaMag_2")
                 .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
-                .withModel(new com.paneedah.mwc.models.Saiga12mag(), "gun.png")
-
+                .withRotationPoint(-0.12000000357627871, 0.28000000834465033, -1.8800000560283665)
+                .withModel(new com.paneedah.mwc.models.Saiga12mag(), "saiga12.png")
                 .withFirstPersonPositioning(() -> {
                     GL11.glTranslatef(0.1F, -0.3F, 0.4F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);

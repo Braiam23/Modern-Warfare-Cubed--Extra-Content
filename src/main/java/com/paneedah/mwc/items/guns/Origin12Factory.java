@@ -21,7 +21,7 @@ public class Origin12Factory {
         return new Weapon.Builder()
 
         .withName("origin12")
-        .withFireRate(0.3f)
+        .withFireRate(0.1f)
         .withRecoil(9f)
         .withZoom(0.9f)
         .withConfigGroup(GunConfigurationGroup.SHOTGUN)
@@ -111,7 +111,6 @@ public class Origin12Factory {
         })
         .withCompatibleAttachment(Attachments.Origin12Handguard, true, (model) -> {
             if(model instanceof Origin12Handguard) {
-//                GL11.glScaled(1F, 0.98F, 1);
             } else if(model instanceof AKRail) {
                 GL11.glTranslatef(-0.222F, -1.5F, -4.4f);
                 GL11.glScaled(0.72F, 0.72F, 0.8F);
@@ -351,6 +350,7 @@ public class Origin12Factory {
             .withModel(new Origin12())
             .withEntityPositioning(itemStack -> {
                 GL11.glScaled(0.35F, 0.35F, 0.35F);
+				GL11.glTranslatef(0, 0f, 3f);
             })
             .withInventoryPositioning(itemStack -> {
                 GL11.glScaled(0.28F, 0.28F, 0.28F);

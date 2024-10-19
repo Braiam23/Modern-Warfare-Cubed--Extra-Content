@@ -285,6 +285,7 @@ public class FamasF1Factory {
 //            .withActionTransform(new Transform().withPosition(0, 0, 1))
             .withEntityPositioning(itemStack -> {
                 GL11.glScaled(0.35F, 0.35F, 0.35F);
+				GL11.glTranslatef(0, 0f, 3f);
             })
             .withThirdPersonPositioning((renderContext) -> {
                 GL11.glScaled(0.45F, 0.45F, 0.45F);

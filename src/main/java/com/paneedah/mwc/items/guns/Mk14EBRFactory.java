@@ -432,6 +432,7 @@ public class Mk14EBRFactory {
             .withActionTransform(new Transform().withPosition(0, 0, 0.95))
             .withEntityPositioning(itemStack -> {
                 GL11.glScaled(0.35F, 0.35F, 0.35F);
+				GL11.glTranslatef(0, 0f, 3f);
             })
             .withInventoryPositioning(itemStack -> {
                 GL11.glScaled(0.28F, 0.28F, 0.28F);
