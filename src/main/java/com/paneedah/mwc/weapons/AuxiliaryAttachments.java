@@ -56,6 +56,7 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> SV98BoltAction;
     public static ItemAttachment<Weapon> L96A1BoltAction;
     public static ItemAttachment<Weapon> InterventionBoltAction;
+    public static ItemAttachment<Weapon> InterventionBoltActionPrime;
     public static ItemAttachment<Weapon> VSSVintorezAction;
     public static ItemAttachment<Weapon> AS50Action;
     public static ItemAttachment<Weapon> P10Slide;
@@ -1218,6 +1219,14 @@ public class AuxiliaryAttachments {
                 .withCategory(AttachmentCategory.EXTRA3)
                 // .withCreativeTab(MWC.gunsTab)
                 .withModel(new com.paneedah.mwc.models.InterventionBoltAction(), "intervention.png")
+                .withName("InterventionBoltAction")
+                .withRenderablePart().withTextureName("Dummy.png")
+                .build(MWC.modContext);
+
+        InterventionBoltActionPrime = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA3)
+                // .withCreativeTab(MWC.gunsTab)
+                .withModel(new com.paneedah.mwc.models.InterventionBoltActionPrime(), "intervention.png")
                 .withName("InterventionBoltAction")
                 .withRenderablePart().withTextureName("Dummy.png")
                 .build(MWC.modContext);

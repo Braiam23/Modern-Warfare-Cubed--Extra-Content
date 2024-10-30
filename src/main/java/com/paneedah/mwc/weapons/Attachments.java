@@ -540,6 +540,16 @@ public class Attachments {
 	
 	public static ItemAttachment<Weapon> Saiga12Handguard;
 
+    public static ItemAttachment<Weapon> InterventionStock;
+    public static ItemAttachment<Weapon> InterventionKiloTaCStock;
+    public static ItemAttachment<Weapon> InterventionFJXLUX7Stock;
+    public static ItemAttachment<Weapon> InterventionHandguard;
+    public static ItemAttachment<Weapon> InterventionQTDRifleHandguard;
+    public static ItemAttachment<Weapon> InterventionRailSystemHandguard;
+    public static ItemAttachment<Weapon> InterventionCarryHandle;
+    public static ItemAttachment<Weapon> InterventionKeystoneHandle;
+
+
     public static void init(Object mod) {
 
         G11HandguardK1 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -17115,6 +17125,308 @@ public class Attachments {
                     }
                 })
                 .withName("Saiga12Handguard").withTextureName("Dummy.png")
+                .build(MWC.modContext);
+
+        InterventionHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
+                .withCreativeTab(MWC.ATTACHMENTS_TAB)
+                .withModel(new InterventionHandguard(), "intervention.png")
+                .withModernRecipe(
+                        CraftingGroup.ATTACHMENT_MODIFICATION,
+                        new CraftingEntry(MWCItems.gunmetalIngot, 3),
+                        new CraftingEntry(Blocks.PLANKS, 2))
+                .withInventoryModelPositioning(model -> {
+                    if (model instanceof InterventionHandguard) {
+                        GL11.glTranslatef(-0.6F, 0.4F, -2F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning(model -> {
+                    if (model instanceof InterventionHandguard) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning(model -> {
+                    if (model instanceof InterventionHandguard) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("InterventionHandguard").withTextureName("Dummy.png")
+                .build(MWC.modContext);
+
+        InterventionQTDRifleHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
+                .withCreativeTab(MWC.ATTACHMENTS_TAB)
+                .withModel(new InterventionQTDRifleHandguard(), "intervention.png")
+                .withModernRecipe(
+                        CraftingGroup.ATTACHMENT_MODIFICATION,
+                        new CraftingEntry(MWCItems.gunmetalIngot, 3),
+                        new CraftingEntry(Blocks.PLANKS, 2))
+                .withInventoryModelPositioning(model -> {
+                    if (model instanceof InterventionQTDRifleHandguard) {
+                        GL11.glTranslatef(-0.6F, 0.4F, -2F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning(model -> {
+                    if (model instanceof InterventionQTDRifleHandguard) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning(model -> {
+                    if (model instanceof InterventionQTDRifleHandguard) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("InterventionQTDRifleHandguard").withTextureName("Dummy.png")
+                .build(MWC.modContext);
+
+        InterventionRailSystemHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
+                .withCreativeTab(MWC.ATTACHMENTS_TAB)
+                .withModel(new InterventionRailSystemHandguard(), "intervention.png")
+                .withModel(new com.paneedah.mwc.models.AKRail(), "akrail.png")
+                .withModernRecipe(
+                        CraftingGroup.ATTACHMENT_MODIFICATION,
+                        new CraftingEntry(MWCItems.gunmetalIngot, 3),
+                        new CraftingEntry(Blocks.PLANKS, 2))
+                .withInventoryModelPositioning(model -> {
+                    if (model instanceof InterventionRailSystemHandguard) {
+                        GL11.glTranslatef(-0.6F, 0.4F, -2F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning(model -> {
+                    if (model instanceof InterventionRailSystemHandguard) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning(model -> {
+                    if (model instanceof InterventionRailSystemHandguard) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("InterventionRailSystemHandguard").withTextureName("Dummy.png")
+                .build(MWC.modContext);
+
+        InterventionFJXLUX7Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
+                .withCreativeTab(MWC.ATTACHMENTS_TAB)
+                .withModel(new InterventionFJXLUX7Stock(), "intervention.png")
+                .withRenderablePart()
+                .withInventoryModelPositioning(model -> {
+                    if (model instanceof InterventionFJXLUX7Stock) {
+                        GL11.glTranslatef(-0.6F, -0.2F, -0.15F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.43F, 0.43F, 0.43f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning(model -> {
+                    if (model instanceof InterventionFJXLUX7Stock) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning(model -> {
+                    if (model instanceof InterventionFJXLUX7Stock) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("InterventionFJXLUX7Stock").withTextureName("Dummy.png")
+                .build(MWC.modContext);
+
+        InterventionKiloTaCStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
+                .withCreativeTab(MWC.ATTACHMENTS_TAB)
+                .withModel(new InterventionKiloTaCStock(), "intervention.png")
+                .withRenderablePart()
+                .withInventoryModelPositioning(model -> {
+                    if (model instanceof InterventionKiloTaCStock) {
+                        GL11.glTranslatef(-0.6F, -0.2F, -0.15F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.43F, 0.43F, 0.43f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning(model -> {
+                    if (model instanceof InterventionKiloTaCStock) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning(model -> {
+                    if (model instanceof InterventionKiloTaCStock) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("InterventionKiloTaCStock").withTextureName("Dummy.png")
+                .build(MWC.modContext);
+
+        InterventionStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
+                .withCreativeTab(MWC.ATTACHMENTS_TAB)
+                .withModel(new InterventionStock(), "intervention.png")
+                .withRenderablePart()
+                .withInventoryModelPositioning(model -> {
+                    if (model instanceof InterventionStock) {
+                        GL11.glTranslatef(-0.6F, -0.2F, -0.15F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.43F, 0.43F, 0.43f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning(model -> {
+                    if (model instanceof InterventionStock) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning(model -> {
+                    if (model instanceof InterventionStock) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("InterventionStock").withTextureName("Dummy.png")
+                .build(MWC.modContext);
+
+        InterventionCarryHandle = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
+                .withCreativeTab(MWC.ATTACHMENTS_TAB)
+                .withModel(new InterventionCarryHandle(), "intervention.png")
+                .withModernRecipe(
+                        CraftingGroup.ATTACHMENT_MODIFICATION,
+                        new CraftingEntry(MWCItems.gunmetalIngot, 3))
+                .withInventoryModelPositioning(model -> {
+                    if (model instanceof InterventionCarryHandle) {
+                        GL11.glTranslatef(-0.6F, -0F, -0.2F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning(model -> {
+                    if (model instanceof InterventionCarryHandle) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning(model -> {
+                    if (model instanceof InterventionCarryHandle) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("InterventionCarryHandle").withTextureName("Dummy.png")
+                .build(MWC.modContext);
+
+        InterventionKeystoneHandle = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
+                .withCreativeTab(MWC.ATTACHMENTS_TAB)
+                .withModel(new InterventionKeystoneHandle(), "intervention.png")
+                .withModernRecipe(
+                        CraftingGroup.ATTACHMENT_MODIFICATION,
+                        new CraftingEntry(MWCItems.gunmetalIngot, 3))
+                .withInventoryModelPositioning(model -> {
+                    if (model instanceof InterventionKeystoneHandle) {
+                        GL11.glTranslatef(-0.6F, -0F, -0.2F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning(model -> {
+                    if (model instanceof InterventionKeystoneHandle) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning(model -> {
+                    if (model instanceof InterventionKeystoneHandle) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("InterventionKeystoneHandle").withTextureName("Dummy.png")
                 .build(MWC.modContext);
     }
 }
