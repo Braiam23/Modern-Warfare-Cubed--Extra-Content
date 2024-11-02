@@ -1173,6 +1173,7 @@ public class AuxiliaryAttachments {
                 .withCategory(AttachmentCategory.EXTRA2)
                 // .withCreativeTab(MWC.gunsTab)
                 .withModel(new com.paneedah.mwc.models.R700actionMain(), "remington700")
+                .withRotationPoint(0.12159999456405646, -1.5596000435292718, 0.8224000258207329)
                 .withName("Remington700BoltActionMain")
                 .withRenderablePart().withTextureName("Dummy.png")
                 .build(MWC.modContext);
@@ -1224,10 +1225,11 @@ public class AuxiliaryAttachments {
                 .build(MWC.modContext);
 
         InterventionBoltActionPrime = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA3)
+                .withCategory(AttachmentCategory.EXTRA2)
                 // .withCreativeTab(MWC.gunsTab)
                 .withModel(new com.paneedah.mwc.models.InterventionBoltActionPrime(), "intervention.png")
-                .withName("InterventionBoltAction")
+                .withRotationPoint(0.12159999456405646, -1.5596000435292718, 0.8224000258207329)
+                .withName("InterventionBoltActionPrime")
                 .withRenderablePart().withTextureName("Dummy.png")
                 .build(MWC.modContext);
         

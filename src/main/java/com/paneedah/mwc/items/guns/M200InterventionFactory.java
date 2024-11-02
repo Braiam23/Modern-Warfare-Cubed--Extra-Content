@@ -32,6 +32,9 @@ public class M200InterventionFactory implements GunFactory {
                 .withSilencedShootSound("as50_silenced")
                 .withDrawSound("noaction_draw")
                 .withReloadingTime(40)
+                .withCrosshair("gun")
+                .withCrosshairRunning("Running")
+                .withCrosshairZoomed("Sight")
                 .withFlashIntensity(0.5f)
                 .withFlashScale(() -> 0.6f)
                 .withFlashOffsetX(() -> 0.08f)
@@ -119,7 +122,7 @@ public class M200InterventionFactory implements GunFactory {
                         GL11.glScaled(0.1F, 0.1F, 0.1F);
                     }
                 })
-                .withCompatibleAttachment(Attachments.LeupoldRailScope, (player, stack) -> {
+                .withCompatibleAttachment(Attachments.LeupoldRailScope, true, (player, stack) -> {
                     GL11.glTranslatef(0.085F, -1.83F, -1.1F);
                     GL11.glScaled(0.48F, 0.48F, 0.48F);
                 }, (model) -> {
