@@ -2383,5 +2383,14 @@
        "stream": false
       }
     ]
+  },
+  "p12": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "mwc:p12",
+        "stream": false
+      }
+    ]
   }
 }

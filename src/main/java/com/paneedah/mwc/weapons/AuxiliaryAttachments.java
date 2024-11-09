@@ -277,7 +277,7 @@ public class AuxiliaryAttachments {
         M134Barrels = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA)
                 // .withCreativeTab(MWC.gunsTab)
-                .withModel(new com.paneedah.mwc.models.M134Barrels(), "gun.png")
+                .withModel(new com.paneedah.mwc.models.M134Barrels(), "m134.png")
                 .withName("M134Barrels")
                 .withRenderablePart().withTextureName("Dummy.png")
                 .build(MWC.modContext);

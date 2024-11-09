@@ -21,8 +21,8 @@ public class M1911Factory implements GunFactory {
 
                 .withName("m1911")
                 .withFireRate(0.26f)
-                .withRecoil(3f)
-                .withZoom(0.9f)
+                .withRecoil(4f)
+                .withZoom(0f)
                 .withConfigGroup(GunConfigurationGroup.SIDEARM)
                 .withShellType(Type.PISTOL)
                 .withMuzzlePosition(new Vec3d(-0.15, -0.8, -3.4))
@@ -162,7 +162,7 @@ public class M1911Factory implements GunFactory {
                         })
 
                         .withFirstPersonPositioningZooming((renderContext) -> {
-                            GL11.glTranslatef(0.239F, -0.235F, -1.6F);
+                            GL11.glTranslatef(0.239F, -0.235F, -1.9F);
 
                             if (Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.M45A1CQBPSlide))
                                 GL11.glTranslatef(0.01f, 0.01f, 0f);

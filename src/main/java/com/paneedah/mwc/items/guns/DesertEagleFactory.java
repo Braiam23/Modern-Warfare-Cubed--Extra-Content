@@ -20,8 +20,8 @@ public class DesertEagleFactory implements GunFactory {
 
         .withName("desert_eagle")
         .withFireRate(0.1f)
-        .withRecoil(7f)
-        .withZoom(0.9f)
+        .withRecoil(8.95f)
+        .withZoom(0f)
         .withConfigGroup(GunConfigurationGroup.SIDEARM)
         .withMuzzlePosition(new Vec3d(-0.14400000429153445, -0.8639999959468836, -3.355999876499175))
         .withShellType(Type.PISTOL)
@@ -37,16 +37,16 @@ public class DesertEagleFactory implements GunFactory {
         .withFlashScale(() -> 0.7f)
         .withFlashOffsetX(() -> 0.13f)
         .withFlashOffsetY(() -> 0.14f)
-        .withInaccuracy(2)
+        .withInaccuracy(1.5f)
         .withCreativeTab(MWC.WEAPONS_TAB)
         .useNewSystem()
         .withRecoilParam(new RecoilParam(
         		// The weapon power
         		90.0,
         		// Muzzle climb divisor
-        		37.375,
+        		27.375,
         		// "Stock Length"
-        		34.5,
+        		28.5,
         		// Recovery rate from initial shot
         		0.825,
         		// Recovery rate @ "stock"
@@ -60,8 +60,8 @@ public class DesertEagleFactory implements GunFactory {
         ))
         .withScreenShaking(RenderableState.SHOOTING,
                4.6f,
-               -5.5f,
-               4f)
+               6.1f,
+               5f)
 
         .withUnremovableAttachmentCategories(AttachmentCategory.GUARD)
         .withUnremovableAttachmentCategories(AttachmentCategory.RAILING)
@@ -134,7 +134,7 @@ public class DesertEagleFactory implements GunFactory {
             
             .withFirstPersonPositioning(
 					new Transform()
-					.withPosition(-1.545000f, 4.165000f, -8.295000f)
+					.withPosition(-1.545000f, 3.665000f, -8.295000f)
 					.withRotation(0.000000f, 1.000000f, 7.681469f)
 					.withRotationPoint(-0.12000000357627871, -0.36000001072883614, 0.040000001192092904)
                     .withScale(3.0, 3.0, 3.0)
@@ -170,7 +170,7 @@ public class DesertEagleFactory implements GunFactory {
             })
                 
             .withFirstPersonPositioningZooming((renderContext) -> {
-                GL11.glTranslatef(0.168f, -0.245f, -1.5f);
+                GL11.glTranslatef(0.168f, -0.245f, -1.9f);
 
             if (Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.RMR))
                     GL11.glTranslatef(-0.007f, 0.15f, 1f);

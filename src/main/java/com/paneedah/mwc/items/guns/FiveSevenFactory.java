@@ -20,9 +20,9 @@ public class FiveSevenFactory implements GunFactory {
         return new Weapon.Builder()
 
         .withName("fiveseven")
-        .withFireRate(0.5f)
-        .withRecoil(2f)
-        .withZoom(0.9f)
+        .withFireRate(0.28f)
+        .withRecoil(4.5f)
+        .withZoom(0f)
         .withConfigGroup(GunConfigurationGroup.HANDGUN)
         .withMuzzlePosition(new Vec3d(-0.14400000429153445, -0.8639999959468836, -2.355999876499175))
         .withShellType(Type.PISTOL)
@@ -43,11 +43,11 @@ public class FiveSevenFactory implements GunFactory {
         .useNewSystem()
         .withRecoilParam(new RecoilParam(
         		// The weapon power
-        		45.0,
+        		76.40,
         		// Muzzle climb divisor
         		13.5,
         		// "Stock Length"
-        		37.5,
+        		25.5,
         		// Recovery rate from initial shot
         		0.425,
         		// Recovery rate @ "stock"
@@ -57,7 +57,7 @@ public class FiveSevenFactory implements GunFactory {
         		// Recoil rotation (Z)
         		0.0,
         		// Ads similarity divisor
-        		1.0
+        		1.5
         ))
 
          .withScreenShaking(RenderableState.SHOOTING, 
@@ -180,7 +180,7 @@ public class FiveSevenFactory implements GunFactory {
                 
             .withFirstPersonPositioningZooming((renderContext) -> {
                 GL11.glScaled(3F, 3F, 3F);
-                GL11.glTranslatef(0.145f, 0.655f, -1.9f);
+                GL11.glTranslatef(0.145f, 0.655f, -2.3f);
                 
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.RMR)) {
                     GL11.glTranslatef(0f, 0.22f, 0f);

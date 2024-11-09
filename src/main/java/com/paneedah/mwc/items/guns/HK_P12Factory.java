@@ -24,9 +24,9 @@ public class HK_P12Factory implements GunFactory {
         return new Weapon.Builder()
 
         .withName("hk_p12")
-        .withFireRate(0.3f)
-        .withRecoil(4f)
-        .withZoom(0.9f)
+        .withFireRate(0.17f)
+        .withRecoil(5.8f)
+        .withZoom(0f)
         .withConfigGroup(GunConfigurationGroup.SIDEARM)
         .withMuzzlePosition(new Vec3d(-0.14400000429153445, -0.8639999959468836, -2.355999876499175))
         .withShellType(Type.PISTOL)
@@ -48,13 +48,13 @@ public class HK_P12Factory implements GunFactory {
         .useNewSystem()
         .withRecoilParam(new RecoilParam(
         		// The weapon power
-        		45.0,
+        		85.0,
         		// Muzzle climb divisor
-        		13.5,
+                13.75,
         		// "Stock Length"
-        		37.5,
+        		23.5,
         		// Recovery rate from initial shot
-        		0.425,
+        		0.465,
         		// Recovery rate @ "stock"
         		0.2125,
         		// Recoil rotation (Y)
@@ -62,13 +62,13 @@ public class HK_P12Factory implements GunFactory {
         		// Recoil rotation (Z)
         		0.0,
         		// Ads similarity divisor
-        		1.0
+        		1.2
         ))
         
         .withScreenShaking(RenderableState.SHOOTING, 
-                3f,
-                0.1f, 
-                1f) 
+                5f,
+                4f,
+                6f)
          
         .withModernRecipe( new
         		CraftingEntry(MWCItems.carbonComposite, 7), new
@@ -148,7 +148,7 @@ public class HK_P12Factory implements GunFactory {
                 	GL11.glTranslatef(-0.23F, -1.14F, -4.92F);
                     GL11.glScaled(1.5F, 1.5F, 1.5F);
                 } else {
-                	GL11.glTranslatef(-0.23F, -1.14F, -4.92F);
+                	GL11.glTranslatef(-0.23F, -1.14F, -4.82F);
                     GL11.glScaled(1.5F, 1.5F, 1.5F);
                 }
             }
@@ -221,7 +221,7 @@ public class HK_P12Factory implements GunFactory {
 
             .withFirstPersonPositioningZooming((renderContext) -> {
                 GL11.glScaled(3F, 3F, 3F);
-                GL11.glTranslatef(0.15f, 0.67f, -2f);
+                GL11.glTranslatef(0.15f, 0.67f, -2.45f);
                 
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                     GL11.glTranslatef(0f, 0.46f, 1.4f);
