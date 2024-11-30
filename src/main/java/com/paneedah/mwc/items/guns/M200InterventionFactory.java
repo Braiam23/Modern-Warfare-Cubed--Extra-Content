@@ -28,7 +28,7 @@ public class M200InterventionFactory implements GunFactory {
                 .withConfigGroup(GunConfigurationGroup.LONG_RANGE_RIFLES)
                 .withMaxShots(1)
                 .withShootSound("m200_intervention")
-                .withPumpTimeout(1500)
+                .withPumpTimeout(2500)
                 .withSilencedShootSound("as50_silenced")
                 .withDrawSound("noaction_draw")
                 .withReloadingTime(40)

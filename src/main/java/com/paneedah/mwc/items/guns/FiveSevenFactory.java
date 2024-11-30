@@ -20,7 +20,7 @@ public class FiveSevenFactory implements GunFactory {
         return new Weapon.Builder()
 
         .withName("fiveseven")
-        .withFireRate(0.28f)
+        .withFireRate(0.24f)
         .withRecoil(4.5f)
         .withZoom(0f)
         .withConfigGroup(GunConfigurationGroup.HANDGUN)
@@ -38,7 +38,7 @@ public class FiveSevenFactory implements GunFactory {
         .withFlashScale(() -> 0.6f)
         .withFlashOffsetX(() -> 0.11f)
         .withFlashOffsetY(() -> 0.13f)
-        .withInaccuracy(3)
+        .withInaccuracy(1.5f)
         .withCreativeTab(MWC.WEAPONS_TAB)
         .useNewSystem()
         .withRecoilParam(new RecoilParam(

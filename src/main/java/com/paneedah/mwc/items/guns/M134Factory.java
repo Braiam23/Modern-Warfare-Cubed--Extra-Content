@@ -21,7 +21,7 @@ public class M134Factory implements GunFactory {
         return new Weapon.Builder()
 
                 .withName("m134")
-                .withAmmoCapacity(1000)
+                .withAmmoCapacity(10000)
                 .withFireRate(0.9999999f)
                 .withRecoil(3f)
                 .withZoom(0.0f)
@@ -31,7 +31,7 @@ public class M134Factory implements GunFactory {
                 .withEndOfShootSound("gun_click")
                 .withDrawSound("noaction_draw")
                 .withReloadingTime(50)
-                .withMuzzlePosition(new Vec3d(-0.15600000464916233, -0.5239999917745591, -6.0523999881505966))
+                .withMuzzlePosition(new Vec3d(-0.15600000464916233, 1.5239999917745591, -6.5523999881505966))
                 .withCrosshair("gun")
                 .withCrosshairRunning("Running")
                 .withCrosshairZoomed("Sight")
@@ -70,7 +70,7 @@ public class M134Factory implements GunFactory {
 
                         .withModel(new M134())
                         .withEntityPositioning(itemStack -> {
-                            GL11.glScaled(0.4F, 0.4F, 0.4F);
+                            GL11.glScaled(0.5F, 0.5F, 0.5F);
                             GL11.glTranslatef(0, 0f, 3f);
                         })
                         .withInventoryPositioning(itemStack -> {
@@ -86,7 +86,7 @@ public class M134Factory implements GunFactory {
                         })
                         .withFirstPersonPositioning(
                                 new Transform()
-                                        .withPosition(-2.95000f, 3.825000f, -3.045000f)
+                                        .withPosition(-2.95000f, 3.825000f, -10.045000f)
                                         .withRotation(0.000000f, 1.000000f, 21.300000f)
                                         .withRotationPoint(-0.350000f, -0.900000f, 0.700000f)
                                         .withScale(3.0, 3.0, 3.0)
@@ -96,7 +96,7 @@ public class M134Factory implements GunFactory {
 
                                 // Left hand
                                 new Transform()
-                                        .withPosition(1.190000f, -0.170000f, -6.53000f)
+                                        .withPosition(1.050000f, 0.025000f, -0.500000f)
                                         .withBBRotation(35.6925, 8.4022, -90.464)
                                         .withScale(2.6, 2.6, 4.0)
                                         .withRotationPoint(0, 0, 0),
@@ -104,14 +104,14 @@ public class M134Factory implements GunFactory {
 
                                 // Right hand
                                 new Transform()
-                                        .withPosition(-0.0F, 0.2F, 4f)
+                                        .withPosition(-0.2, 0.1, 2)
                                         .withRotation(5.5675, 14.735, -0.7008)
                                         .withScale(3.5, 3.5, 3.5)
                                         .withRotationPoint(0, 0, 0)
 
                         )
 
-                        .setupModernAnimations("mp7", AuxiliaryAttachments.M134Barrels)
+                        .setupModernAnimations("m134", AuxiliaryAttachments.M134Barrels)
 
                         .withFirstPersonPositioningZooming((renderContext) -> {
                             GL11.glTranslatef(0f, 0f, 0f);

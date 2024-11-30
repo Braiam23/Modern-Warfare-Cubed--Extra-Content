@@ -180,6 +180,10 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> Chain;
     public static ItemAttachment<Weapon> ChainA;
     public static ItemAttachment<Weapon> ChainB;
+
+    public static ItemAttachment<Weapon> AKSaction;
+    public static ItemAttachment<Weapon> AKSFrontSight;
+
     public static void init(Object mod) {
         
         ChainB = new AttachmentBuilder<Weapon>()
@@ -1496,6 +1500,22 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mwc.models.Suppressor(), "gun")
                 .withName("AKmuzzle").withRenderablePart()
                 .withTextureName("Dummy.png").build(MWC.modContext);
+
+        AKSaction = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA)
+                // .withCreativeTab(MWC.gunsTab)
+                .withModel(new AKSaction(), "aks74u.png")
+                .withName("AKSaction")
+                .withRenderablePart().withTextureName("Dummy.png")
+                .build(MWC.modContext);
+
+        AKSFrontSight = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA6)
+                // .withCreativeTab(MWC.gunsTab)
+                .withModel(new AKS74UFrontSight(), "gun.png")
+                .withName("AKSFrontSight")
+                .withRenderablePart().withTextureName("Dummy.png")
+                .build(MWC.modContext);
 
     }
     

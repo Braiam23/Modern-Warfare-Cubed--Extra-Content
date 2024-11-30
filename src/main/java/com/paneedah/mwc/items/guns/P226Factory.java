@@ -22,18 +22,15 @@ public class P226Factory implements GunFactory {
         return new Weapon.Builder()
 
         .withName("p226")
-        .withFireRate(0.5f)
-        .withRecoil(2f)
-        .withZoom(0.9f)
+        .withFireRate(0.2f)
+        .withRecoil(3.6f)
+        .withZoom(0f)
         .withConfigGroup(GunConfigurationGroup.SIDEARM)
         .withMuzzlePosition(new Vec3d(-0.14400000429153445, -0.8639999959468836, -2.355999876499175))
         .withShellType(Type.PISTOL)
         .withMaxShots(1)
         .withShootSound("p226")
         .withSilencedShootSound("m9a1_silenced")
-        .withReloadSound("m9a1_reload")
-        .withUnloadSound("pistol_unload")
-        .withInspectSound("inspection")
         .withDrawSound("handgun_draw")
         .withReloadingTime(50)
         .withCrosshair("gun")
@@ -44,12 +41,12 @@ public class P226Factory implements GunFactory {
         .withFlashOffsetX(() -> 0.11f)
         .withFlashOffsetY(() -> 0.13f)
 //      .withShellCasingForwardOffset(0.001f)
-        .withInaccuracy(3)
+        .withInaccuracy(1.5f)
         .withCreativeTab(MWC.WEAPONS_TAB)
         .useNewSystem()
         .withRecoilParam(new RecoilParam(
         		// The weapon power
-        		45.0,
+        		75.0,
         		// Muzzle climb divisor
         		13.5,
         		// "Stock Length"
@@ -101,9 +98,6 @@ public class P226Factory implements GunFactory {
            GL11.glTranslatef(0F, 0.02F, 0.02F);
         })
         .withCompatibleAttachment(Magazines.M9Mag30, (model) -> {
-        	 GL11.glTranslatef(0F, 0.02F, 0.02F);
-        })
-        .withCompatibleAttachment(Magazines.M9DrumMag, (model) -> {
         	 GL11.glTranslatef(0F, 0.02F, 0.02F);
         })
         .withCompatibleAttachment(Attachments.Laser, (p, s) -> {
@@ -192,8 +186,7 @@ public class P226Factory implements GunFactory {
                 .setupModernAnimations("p226", Attachments.P226Slide)
                 .setupModernMagazineAnimations("p226", 
                 		Magazines.M9A1Mag,
-                		Magazines.M9Mag30,
-                		Magazines.M9DrumMag)
+                		Magazines.M9Mag30)
                 
             .withFirstPersonCustomPositioning(Attachments.P226Slide.getRenderablePart(), (renderContext) -> {
                 if(renderContext.getWeaponInstance().getAmmo() == 0) {
@@ -203,7 +196,7 @@ public class P226Factory implements GunFactory {
  
             .withFirstPersonPositioningZooming((renderContext) -> {
                 GL11.glScaled(3F, 3F, 3F);
-                GL11.glTranslatef(0.145f, 0.66f, -1.9f);
+                GL11.glTranslatef(0.145f, 0.66f, -2.3f);
                 
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.RMR)) {
                     //System.out.println("Position me for Holo");

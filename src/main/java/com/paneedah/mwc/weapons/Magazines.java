@@ -120,6 +120,7 @@ public class Magazines {
     public static ItemMagazine M60Mag;
     public static ItemMagazine M249Mag;
     public static ItemMagazine FuelCell;
+    public static ItemMagazine AKS74UMag;
 
     public static void init(Object mod) {
     	
@@ -2991,6 +2992,34 @@ public class Magazines {
                     GL11.glRotatef(-6F, 1f, 0f, 0f);
                     GL11.glRotatef(-15F, 0f, 0f, 1f);
                     GL11.glScaled(0.7F, 0.7F, 0.7f);
+                })
+                .withMaxStackSize(6)
+                .withTextureName("Dummy.png").build(MWC.modContext, ItemMagazine.class);
+
+        Magazines.AKS74UMag = new ItemMagazine.Builder()
+                .withCapacity(30)
+                .withCompatibleBullet(Bullets.Bullet545x39)
+                .withName("AKS74UMag")
+                .withRotationPoint(-0.12000000357627871, 0.28000000834465033, -1.8800000560283665)
+
+                .withCreativeTab(MWC.AMMUNITION_AND_MAGAZINES_TAB)
+                .withModel(new com.paneedah.mwc.models.AKS74UMag(), "aks74u.png")
+
+                .withFirstPersonPositioning(() -> {
+                    GL11.glTranslatef(0.1F, -0.3F, 0.4F);
+                    GL11.glRotatef(30F, 0f, 1f, 0f);
+                    GL11.glScaled(0.7F, 0.7F, 0.7F);
+                }).withThirdPersonPositioning(() -> {
+                    GL11.glTranslatef(-0.3F, 0.5F, 0.1F);
+                    GL11.glRotatef(-50F, 0f, 1f, 0f);
+                    GL11.glRotatef(10F, 1f, 0f, 0f);
+                    GL11.glScaled(0.7F, 0.7F, 0.7F);
+                }).withInventoryPositioning(() -> {
+                    GL11.glTranslatef(0.3F, 0.7F, -2.7F);
+                    GL11.glRotatef(-150F, 0f, 1f, 0f);
+                    GL11.glRotatef(0F, 1f, 0f, 0f);
+                    GL11.glRotatef(-5F, 0f, 0f, 1f);
+                    GL11.glScaled(0.8F, 0.8F, 0.8f);
                 })
                 .withMaxStackSize(6)
                 .withTextureName("Dummy.png").build(MWC.modContext, ItemMagazine.class);

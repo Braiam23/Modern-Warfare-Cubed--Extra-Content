@@ -104,6 +104,7 @@ public class Attachments {
     public static ItemAttachment<Weapon> VeprDustCover;
     public static ItemAttachment<Weapon> AK101DustCover;
     public static ItemAttachment<Weapon> AK15DustCover;
+    public static ItemAttachment<Weapon> AKSDustCover;
     
     public static ItemAttachment<Weapon> DragunovDustCover;
     public static ItemAttachment<Weapon> Dragunov98DustCover;
@@ -124,6 +125,7 @@ public class Attachments {
     public static ItemAttachment<Weapon> AK47HandleGuard;
     public static ItemAttachment<Weapon> AK101HandGuard;
     public static ItemAttachment<Weapon> AK74Handguard;
+    public static ItemAttachment<Weapon> AKS74Uhandguard;
     public static ItemAttachment<Weapon> AKMagpulHandleGuard;
     public static ItemAttachment<Weapon> AKMagpulHandleGuardTan;
     public static ItemAttachment<Weapon> MLOKHandguard;
@@ -292,6 +294,7 @@ public class Attachments {
     public static ItemAttachment<Weapon> MP7MilSpecStock;
     
     public static ItemAttachment<Weapon> AK47Stock;
+    public static ItemAttachment<Weapon> AKSStock;
     public static ItemAttachment<Weapon> RPKStock;
     public static ItemAttachment<Weapon> AK101Stock;
     public static ItemAttachment<Weapon> AK74Stock;
@@ -9577,6 +9580,46 @@ public class Attachments {
                 .withName("AK47stock").withTextureName("Dummy.png")
                 .build(MWC.modContext);
 
+        AKSStock = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.STOCK)
+                .withCreativeTab(MWC.ATTACHMENTS_TAB)
+                .withModel(new com.paneedah.mwc.models.AKSStock(), "aks74u.png")
+                .withModernRecipe(
+                        CraftingGroup.ATTACHMENT_MODIFICATION,
+                        new CraftingEntry(MWCItems.gunmetalIngot, 3),
+                        new CraftingEntry(Blocks.PLANKS, 2))
+                .withInventoryModelPositioning(model -> {
+                    if (model instanceof com.paneedah.mwc.models.AKSStock) {
+                        GL11.glTranslatef(-0.6F, 0F, 1.6F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning(model -> {
+                    if (model instanceof com.paneedah.mwc.models.AKSStock) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning(model -> {
+                    if (model instanceof com.paneedah.mwc.models.AKSStock) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("AKSStock").withTextureName("Dummy.png")
+                .build(MWC.modContext);
+
         DragunovGripStock = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(MWC.ATTACHMENTS_TAB)
@@ -10787,6 +10830,44 @@ public class Attachments {
                 .withName("AK74Handguard").withTextureName("Dummy.png")
                 .build(MWC.modContext);
 
+        AKS74Uhandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
+                .withCreativeTab(MWC.ATTACHMENTS_TAB)
+                .withModel(new com.paneedah.mwc.models.AKS74Uhandguard(), "aks74u.png")
+                .withModernRecipe(
+                        CraftingGroup.ATTACHMENT_MODIFICATION,
+                        new CraftingEntry(MWCItems.gunmetalIngot, 3))
+                .withInventoryModelPositioning(model -> {
+                    if (model instanceof com.paneedah.mwc.models.AKS74Uhandguard) {
+                        GL11.glTranslatef(-0.6F, 0.4F, -2F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning(model -> {
+                    if (model instanceof com.paneedah.mwc.models.AKS74Uhandguard) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning(model -> {
+                    if (model instanceof com.paneedah.mwc.models.AKS74Uhandguard) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("AKS74Uhandguard").withTextureName("Dummy.png")
+                .build(MWC.modContext);
+
         AKMagpulHandleGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(MWC.ATTACHMENTS_TAB)
                 .withModel(new com.paneedah.mwc.models.MagpulHandleGuard(), "MagpulHandleGuard.png")
@@ -11402,6 +11483,46 @@ public class Attachments {
                 })
                 .withName("AK47Dustcover").withTextureName("Dummy.png")
                 .build(MWC.modContext);
+
+        AKSDustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
+                .withCreativeTab(MWC.ATTACHMENTS_TAB)
+                .withModel(new com.paneedah.mwc.models.AKSDustCover(), "aks74u.png")
+                .withModel(new com.paneedah.mwc.models.AKS74URearSight(), "gun.png")
+                .withModernRecipe(
+                        CraftingGroup.ATTACHMENT_MODIFICATION,
+                        new CraftingEntry(MWCItems.gunmetalIngot, 3))
+                .withInventoryModelPositioning(model -> {
+                    if (model instanceof com.paneedah.mwc.models.AKSDustCover) {
+                        GL11.glTranslatef(-0.6F, 0.4F, -0.2F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning(model -> {
+                    if (model instanceof com.paneedah.mwc.models.AKSDustCover) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning(model -> {
+                    if (model instanceof com.paneedah.mwc.models.AKSDustCover) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("AKSDustCover").withTextureName("Dummy.png")
+                .build(MWC.modContext);
+
 
         DragunovDustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
                 .withCreativeTab(MWC.ATTACHMENTS_TAB)

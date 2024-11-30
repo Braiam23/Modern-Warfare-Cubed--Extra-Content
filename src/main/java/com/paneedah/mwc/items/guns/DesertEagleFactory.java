@@ -134,7 +134,7 @@ public class DesertEagleFactory implements GunFactory {
             
             .withFirstPersonPositioning(
 					new Transform()
-					.withPosition(-1.545000f, 3.665000f, -8.295000f)
+					.withPosition(-1.545000f, 3.865000f, -8.295000f)
 					.withRotation(0.000000f, 1.000000f, 7.681469f)
 					.withRotationPoint(-0.12000000357627871, -0.36000001072883614, 0.040000001192092904)
                     .withScale(3.0, 3.0, 3.0)

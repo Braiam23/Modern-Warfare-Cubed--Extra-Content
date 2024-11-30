@@ -13,6 +13,7 @@ import com.paneedah.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.paneedah.weaponlib.crafting.CraftingEntry;
 import com.paneedah.weaponlib.render.shells.ShellParticleSimulator.Shell.Type;
 import net.minecraft.item.Item;
+import net.minecraft.util.math.Vec3d;
 import org.lwjgl.opengl.GL11;
 
 public class APSFactory implements GunFactory {
@@ -21,10 +22,11 @@ public class APSFactory implements GunFactory {
         return new Weapon.Builder()
 
         .withName("aps")
-        .withFireRate(0.6f)
-        .withRecoil(3f)
-        .withZoom(0.9f)
+        .withFireRate(0.4f)
+        .withRecoil(5.3f)
+        .withZoom(0f)
         .withConfigGroup(GunConfigurationGroup.SIDEARM)
+        .withMuzzlePosition(new Vec3d(-0.14400000429153445, -0.8639999959468836, -2.355999876499175))
         .withShellType(Type.PISTOL)
         .withMaxShots(1, Integer.MAX_VALUE)
         .withShootSound("aps")
@@ -44,11 +46,11 @@ public class APSFactory implements GunFactory {
         .useNewSystem()
         .withRecoilParam(new RecoilParam(
         		// The weapon power
-        		45.0,
+        		67.50,
         		// Muzzle climb divisor
         		13.5,
         		// "Stock Length"
-        		37.5,
+        		27.35,
         		// Recovery rate from initial shot
         		0.425,
         		// Recovery rate @ "stock"
@@ -159,8 +161,8 @@ public class APSFactory implements GunFactory {
 			
             .withFirstPersonPositioningZooming((renderContext) -> {
                 GL11.glScaled(3F, 3F, 3F);
-                GL11.glTranslatef(0.14f, 0.59f, -1.8f);
-                
+                GL11.glTranslatef(0.14f, 0.59f, -2.15f);
+
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.RMR)) {
                 } 
                 

@@ -148,7 +148,7 @@ public class HK_P12Factory implements GunFactory {
                 	GL11.glTranslatef(-0.23F, -1.14F, -4.92F);
                     GL11.glScaled(1.5F, 1.5F, 1.5F);
                 } else {
-                	GL11.glTranslatef(-0.23F, -1.14F, -4.82F);
+                	GL11.glTranslatef(-0.23F, -1.14F, -4.75F);
                     GL11.glScaled(1.5F, 1.5F, 1.5F);
                 }
             }
